@@ -4,6 +4,12 @@ title: Katie Amazing
 ---
 <div class="blurb">
 	<h1>Hi there, I'm Katie!</h1>
-	<p>I'm working on becoming a programmer. <a href="/about">Read more about my life...</a></p>
+	<p>I'm working on becoming a programmer.</p>
 </div><!-- /.blurb -->
 
+	<ul class="posts">
+
+	  {% for post in site.posts %}
+	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	  {% endfor %}
+	</ul>
