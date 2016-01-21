@@ -1,0 +1,11 @@
+---
+layout: post
+title: It's Alive! Generative Text Twitterbot
+date: 2016-01-20
+---
+  
+ <h1>[@didnotleaveatip](https://twitter.com/didnotleaveatip)</h1>
+ 
+ I'm thrilled that my first twitterbot is up and running. I used [Tracery, a JavaScript library by GalaxyKate](https://github.com/galaxykate/tracery), to create a generative text script. I then used [Cheapbotsdonequick](http://cheapbotsdonequick.com/) to launch a Twitterbot that tweets generated text on a regular schedule. I was inspired by C.A. Pinkham's curated stories of what goes on behind the scenes at restaurants, particularly from the perspective of a server. The weekly publication of these stories (currently on [Wonkette](http://wonkette.com/author/c-a-pinkham), formerly on Kitchenette) is a real highlight in my week, and it was very fun to code a Tracery that makes me laugh as much as this one does.
+ 
+ I'm already thinking about my next Tracery project and how to fold this new skill into a game.
