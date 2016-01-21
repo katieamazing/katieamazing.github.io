@@ -2,6 +2,7 @@
 layout: post
 title: "Welcome to Katie Amazing!"
 date: 2016-01-01
+---
 
 I'm glad you're visiting me at Katie Amazing. I've wanted to be a compentent programmer for some time, but lacking educational background or a professional need to upgrade my coding skills. In 2016, I am going to write some code at least twice a month, hopefully with a GitHub commit, and hopefully also with an accompanying blog post here at KatieAmazing.com to talk about and compound my learnings.
 A lot of people I hang around with on the Internet have fantasies of "cocooning" until they become the thing they want to be. They envision months or years spent in isolation, driven only by willpower and solitude, and then bursting into society as a thinner person or a smarter person or a more attractive person. That story really appeals to me, but I don't think it will work in my case; I like learning from people too much, and talking about my goals helps me to set and achieve them. So even though I am tempted to hide my learning curve and save face, this project is all about documenting my ignorance and talking about learning to program as a layperson. I want to be brave and bold and AMAZING in my journey.
