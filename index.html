@@ -8,8 +8,17 @@ title: Katie Amazing
 </div><!-- /.blurb -->
 
 	<ul class="posts">
+
+	  {% if site.posts contains '2016-01' %}
 	    {% for post in site.posts %}
 	      <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
 	    {% endfor %}
+	  {% endif %}
+	  
+	  {% if page.date contains '2016-02' %}
+	    {% for post in site.posts %}
+	      <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	    {% endfor %}
+	  {% endif %}
 	
 	</ul>
