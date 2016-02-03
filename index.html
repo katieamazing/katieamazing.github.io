@@ -9,7 +9,8 @@ title: Katie Amazing
 
 	<ul class="posts">  
 	{% for post in site.posts %}
-	    {% if post.date contains '2016-02' %}
+	    {% assign foo = post.date | date: '%B' %}
+	    {% if foo contains 'February' %}
   		yay checking for feb
 		{{ post.date | date: "%B" }}
 	    {% endif %}
