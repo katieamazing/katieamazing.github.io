@@ -14,7 +14,9 @@ title: Katie Amazing
 		<li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
 	    {% endif %}
 	{% endfor %}
-	    
+	</ul>
+	
+	<ul class ="posts">
 	{% for post in site.posts %}
 	    {% assign foo = post.date | date: '%B' %}
 	    {% if foo contains 'January' %}
