@@ -9,7 +9,9 @@ title: Katie Amazing
 
 	<ul class="posts">
 	    {% for post in site.posts %}
-	      <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	      {% if post.title == 'Test' %}
+                <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	      {% endif %}
 	    {% endfor %}
 	    
 	    {% for post in site.posts %}
