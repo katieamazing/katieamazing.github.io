@@ -7,11 +7,9 @@ title: Katie Amazing
 	<p>I'm working on becoming a programmer, and writing about my journey.</p>
 </div><!-- /.blurb -->
 
-	<ul class="posts">
+	<ul class="posts">  
 	    {% for post in site.posts %}
-	      {% if post.date == 2016-02-02 %}
-                <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-	      {% endif %}
+	      {{ post.date | date: "%B" }}
 	    {% endfor %}
 	    
 	    {% for post in site.posts %}
