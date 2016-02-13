@@ -33,8 +33,7 @@ figure.month {
   overflow: hidden;
   margin: 0%;
   min-width: 315px;
-  max-width: 600px;
-  border-radius: 25px;
+  max-width: 800px;
   width: 100%;
   color: #000000;
   text-align: center;
