@@ -7,14 +7,7 @@ title: Katie Amazing
 	<p>I'm working on becoming a programmer, and writing about my journey.</p>
 </div><!-- /.blurb -->
 
-	<ul class="posts">  
-	{% for post in site.posts %}
-	    {% assign foo = post.date | date: '%B' %}
-	    {% if foo contains 'February' %}
-		<li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-	    {% endif %}
-	{% endfor %}
-	</ul>
+
 	
 	<ul class ="posts">
 	{% for post in site.posts %}
@@ -29,6 +22,14 @@ title: Katie Amazing
   <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample3.jpg" alt="profile-sample3" class="headerimg" />
     <h2>February</h2>
     <h4>Reading: Custom Variable from Posts?</h4>
-    <blockquote>Dad buried in landslide! Jubilant throngs fill streets! Stunned father inconsolable - demands recount!</blockquote>
+    <blockquote>	
+    <ul class="posts">  
+	{% for post in site.posts %}
+	    {% assign foo = post.date | date: '%B' %}
+	    {% if foo contains 'February' %}
+		<li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	    {% endif %}
+	{% endfor %}
+	</ul></blockquote>
   </figcaption>
 </figure>
