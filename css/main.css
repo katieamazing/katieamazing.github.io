@@ -36,9 +36,12 @@ figure.month {
   max-width: 800px;
   width: 100%;
   color: #000000;
-  text-align: left;
+  text-align: center;
   font-size: 18px;
+  background-color: #00264d;
   padding: 30px;
+  background-image: linear-gradient(-25deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 a {
