@@ -72,7 +72,7 @@ That one seemed close in composition to many of these artworks, and gave a prett
 
 [![original Autumn Light: The Heights](/img/AutumnLightTheHeights.jpg)](http://scottallenarchitectureseattle.com/artwork/)
 
-*Autnumn Light: The Heights, 15"H x 24"W, oil on panel*
+*Autumn Light: The Heights, 15"H x 24"W, oil on panel*
 
 ![Autumn Light x Ekone](/img/autnumn%20to%20ekone.png)
 
