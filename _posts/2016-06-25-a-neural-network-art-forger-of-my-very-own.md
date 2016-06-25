@@ -13,7 +13,7 @@ I chose to start here, with a shot from eastern Washington state. This landscape
 [![original Summer Light](/img/SummerLightTheBackRoadtoNeils.jpg)](http://scottallenarchitectureseattle.com/artwork/)
 >Summer Light: The Back Road to Neil's Place (private collection). 15" x 24", oil on panel.
 
-![original Ekone](/img/Ekone.1004.jpg) 
+![original Ekone](/img/ekone-1004.jpg) 
 >Ekone, from author's snapshots
 
 I chose to modify this photo with information generated from this piece, called Summer Light: The Back Road to Neil's Place. There are a number of visual similarities between the two, such as rolling yellowish hillsides, green plants in the midground, clouds in a grey-ish sky, and a dark green horizon line.
@@ -58,7 +58,7 @@ Oh no, this one is even worse! Another incongruous set of images leads to anothe
 
 So let's go back and look at the photo Ekone again. 
 
-![original Ekone](/img/Ekone.1004.jpg) 
+![original Ekone](/img/ekone-1004.jpg) 
 >Ekone, from author's snapshots
 
 That one seemed close in composition to many of these artworks, and gave a pretty nice result. I wonder how that same photo might look filtered by other paintings.
@@ -75,7 +75,7 @@ So what if we go back to the painting Deliverance, and put that on Ekone? Well, 
 ![original Deliverance - flipped] (/img/252505_Deliverance.jpg)
 >Deliverance, 30"H x 48"W, 2012, oil on panel (flipped horizontally by author)
 
-![original Ekone](/img/Ekone.1004.jpg) 
+![original Ekone](/img/ekone-1004.jpg) 
 >Ekone, from author's snapshots
 
 ![Deliverance - flipped x Ekone](/img/deliverance0flipped%20to%20ekone.png)
