@@ -37,9 +37,11 @@ And it looks pretty nice in the end. The clouds don't look very good, and you ca
 So that was a pretty successful result. What about some less successful attempts?
 
 [![original Reclamation](/img/Reclamation.jpg)](http://scottallenarchitectureseattle.com/artwork/)
+
 *Reclamation, 48"H x 64"W, 2012, oil on panel*
 
 ![original Yellowstone](/img/Yellowstone.jpg)
+
 *Yellowstone, from author's snapshots*
 
 They both have some water features, and a blue, blue sky, but these are very different images without the similarities we had with the previous pair. 
@@ -49,9 +51,11 @@ They both have some water features, and a blue, blue sky, but these are very dif
 And indeed, this one did not come out as well. The network has made some interesting color choices throughout, and the clouds look pretty cool. It is interesting how you can see visually the network identifying areas of similarity and contiguousness (the water in the foreground, the area of green land seperating it). It does a pretty amazing job at that, even as it muddies it up adding the dark red areas from the painting to the photo.
 
 [![original Deliverance](/img/Deliverance.jpg)](http://scottallenarchitectureseattle.com/artwork/)
+
 *Deliverance, 30"H x 48"W, 2012, oil on panel*
 
 ![original Hay Bales](/img/Hay.jpg)
+
 *Hay Bales, from author's snapshots*
 
 ![Deliverance x Hay Bales final output](/img/Deliverance%20to%20Hay.png)
@@ -61,11 +65,13 @@ Oh, this one is even worse! Another incongruous set of images leads to another m
 So let's go back and look at the photo Ekone again. 
 
 ![original Ekone](/img/ekone-1004.jpg) 
+
 *Ekone, from author's snapshots*
 
 That one seemed close in composition to many of these artworks, and gave a pretty nice result. I wonder how that same photo might look filtered by other paintings.
 
 [![original Autumn Light: The Heights](/img/AutumnLightTheHeights.jpg)](http://scottallenarchitectureseattle.com/artwork/)
+
 *Autnumn Light: The Heights, 15"H x 24"W, oil on panel*
 
 ![Autumn Light x Ekone](/img/autnumn%20to%20ekone.png)
@@ -75,9 +81,11 @@ Well that's certainly vivid. It looks like a pretty nice rendition, actually. Th
 So what if we go back to the painting Deliverance, and put that on Ekone? Well, Deliverance has a hillside on the right of the image, and Ekone has a hill in the foreground over on the other side. Those mismatching areas of light and dark and the confusion it creates for the network about where to render the horizon line seem worth avoiding. I wonder though... what if we cannibalized my dad's artwork and just... flipped it? So that the general shape of each image better lines up?
 
 ![original Deliverance - flipped](/img/252505_Deliverance.jpg)
+
 *Deliverance, 30"H x 48"W, 2012, oil on panel (flipped horizontally by author)*
 
 ![original Ekone](/img/ekone-1004.jpg) 
+
 *Ekone, from author's snapshots*
 
 ![Deliverance - flipped x Ekone](/img/deliveranceflippedxekone.png)
