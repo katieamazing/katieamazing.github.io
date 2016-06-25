@@ -6,11 +6,11 @@
 
 Having grown up in Washington, I think of the state as one of the most varied and beautiful in terms of landscape. I might also get this opinion from my father, an architect and artist who grew up in the eastern part of the state, and has lived in Washington for most of his life. My father started doing art inspired by his home when I was still in grade school, and has developed a distinct style of landscape painting.
 
-When I got my first neural network running locally (using Torch and DeepStyle/neural-style described [here](https://github.com/jcjohnson/neural-style)), I immediately wanted to use my dad's artworks to inform the network's filters, and to manipulate some actual photos of western landscapes that I myself have taken over the years.
+When I got my first neural network running locally (using Torch and DeepStyle/neural-style described [here](https://github.com/jcjohnson/neural-style) on Ubuntu), I immediately wanted to use my dad's artworks to inform the network's filters, and to manipulate some actual photos of western landscapes that I myself have taken over the years.
 
 I chose to start here, with a shot from eastern Washington state. This landscape is typical of my dad's artwork; in my preliminary research and experiments with DeepStyle, I found that similar compositions with semi-matching areas of light and dark led to better results and less visual confusion as the network renders features like horizon and foreground. More on that later.
 
-<center>[original Summer Light](img/SummerLightTheBackRoadtoNeils.jpg)</center
+[original Summer Light](img/SummerLightTheBackRoadtoNeils.jpg)
 >Summer Light: The Back Road to Neil's Place (private collection). 15" x 24", oil on panel.
 
 ![original Ekone](/img/Ekone.1004.jpg) 
@@ -34,4 +34,32 @@ And it looks pretty nice in the end. The clouds don't look very good, and you ca
 
 So that was a pretty successful result. What about some less successful attempts?
 
+![original Reclamation] (/img/Reclamation.jpg)
+>Reclamation, 48"H x 64"W, 2012, oil on panel
 
+![original Yellowstone] (/img/Yellowstone.jpg)
+>Yellowstone, from author's snapshots
+
+They both have some water features, and a blue, blue sky, but these are very different images without the smiliarities we had with the previous pair. 
+
+![Reclamation x Yellowstone final output] (img/Reclamation%20and%20barbed%20wire%20ball.png)
+
+And indeed, this one did not come out as well. The network has made some interesting color choices throughout, and the clouds look pretty cool. It is interesting how you can see visually the network identifying areas of similarity and contiguousness (the water in the foreground, the area of green land seperating it). It does a pretty amazing job at that, even as it muddies it up adding the dark red areas from the painting to the photo.
+
+![original Deliverance] (/img/Deliverance.jpg)
+>Deliverance, 30"H x 48"W, 2012, oil on panel
+
+![original Hay Bales] (/img/Hay.jpg)
+>Hay Bales, from author's snapshots
+
+![Deliverance x Hay Bales final output] (img/Deliverance%20to%20Hay.png)
+
+Another incongruous set of images leads to another murky result. The network has gone really off the rails on the sky, which looks like mountains, but like nothing from either source image. Some of the vertical texture in the forground looks nice (and similar to the first image we did), but the darkness in the midground center of the image and at the bottom right are really unattractive. I'm also not surprised that the network did some weird things with the architecturally rendered little white house from the original painting. It seems like that angularity and color is sort of dotted at a small scale along the horizon of the output image, but it's not a very good translation.
+
+So let's go back and look at the photo Ekone again. That one seemed close in composition to many of these artworks, and gave a pretty nice result. I wonder how that same photo might look filtered by other paintings.
+
+![original Autumn Light: The Heights] (/img/AutumnLightTheHeights.jpg)
+>Deliverance, 30"H x 48"W, 2012, oil on panel
+
+![original Hay Bales] (/img/Hay.jpg)
+>Hay Bales, from author's snapshots
