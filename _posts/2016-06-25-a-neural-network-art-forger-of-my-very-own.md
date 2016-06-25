@@ -42,7 +42,7 @@ So that was a pretty successful result. What about some less successful attempts
 
 They both have some water features, and a blue, blue sky, but these are very different images without the smiliarities we had with the previous pair. 
 
-![Reclamation x Yellowstone final output] (img/Reclamation%20and%20barbed%20wire%20ball.png)
+![Reclamation x Yellowstone final output] (/img/Reclamation%20and%20barbed%20wire%20ball.png)
 
 And indeed, this one did not come out as well. The network has made some interesting color choices throughout, and the clouds look pretty cool. It is interesting how you can see visually the network identifying areas of similarity and contiguousness (the water in the foreground, the area of green land seperating it). It does a pretty amazing job at that, even as it muddies it up adding the dark red areas from the painting to the photo.
 
@@ -52,7 +52,7 @@ And indeed, this one did not come out as well. The network has made some interes
 ![original Hay Bales] (/img/Hay.jpg)
 >Hay Bales, from author's snapshots
 
-![Deliverance x Hay Bales final output] (img/Deliverance%20to%20Hay.png)
+![Deliverance x Hay Bales final output] (/img/Deliverance%20to%20Hay.png)
 
 Oh no, this one is even worse! Another incongruous set of images leads to another murky result. The network has gone really off the rails on the sky, which looks like mountains, but like nothing from either source image. Some of the vertical texture in the forground looks nice (and similar to the first image we did), but the darkness in the midground center of the image and at the bottom right are really unattractive. I'm also not surprised that the network did some weird things with the architecturally rendered little white house from the original painting. It seems like that angularity and color is sort of dotted at a small scale along the horizon of the output image, but it's not a very good translation.
 
