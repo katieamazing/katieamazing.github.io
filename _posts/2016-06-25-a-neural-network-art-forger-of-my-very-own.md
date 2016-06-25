@@ -12,7 +12,7 @@ I chose to start here, with a shot from eastern Washington state. This landscape
 
 [![original Summer Light](/img/SummerLightTheBackRoadtoNeils.jpg)](http://scottallenarchitectureseattle.com/artwork/)
 
-*Summer Light: The Back Road to Neil's Place (private collection). 15" x 24", oil on panel*
+  *Summer Light: The Back Road to Neil's Place (private collection). 15" x 24", oil on panel*
 
 ![original Ekone](/img/ekone-1004.jpg) 
 
