@@ -1,8 +1,8 @@
-+---
-+layout: post
-+title: "A Neural Network Art Forger of my Very Own"
-+date: 2016-06-25
-+---
+---
+layout: post
+title: A Neural Network Art Forger of my Very Own
+date: 2016-06-25
+---
 
 Having grown up in Washington, I think of the state as one of the most varied and beautiful in terms of landscape. I might also get this opinion from my father, an architect and artist who grew up in the eastern part of the state, and has lived in Washington for most of his life. My father started doing art inspired by his home when I was still in grade school, and has developed a distinct style of landscape painting.
 
