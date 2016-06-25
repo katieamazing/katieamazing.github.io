@@ -10,7 +10,7 @@ When I got my first neural network running locally (using Torch and DeepStyle/ne
 
 I chose to start here, with a shot from eastern Washington state. This landscape is typical of my dad's artwork; in my preliminary research and experiments with DeepStyle, I found that similar compositions with semi-matching areas of light and dark led to better results and less visual confusion as the network renders features like horizon and foreground. More on that later.
 
-[original Summer Light](img/SummerLightTheBackRoadtoNeils.jpg)
+![original Summer Light](img/SummerLightTheBackRoadtoNeils.jpg)
 >Summer Light: The Back Road to Neil's Place (private collection). 15" x 24", oil on panel.
 
 ![original Ekone](/img/Ekone.1004.jpg) 
@@ -54,12 +54,36 @@ And indeed, this one did not come out as well. The network has made some interes
 
 ![Deliverance x Hay Bales final output] (img/Deliverance%20to%20Hay.png)
 
-Another incongruous set of images leads to another murky result. The network has gone really off the rails on the sky, which looks like mountains, but like nothing from either source image. Some of the vertical texture in the forground looks nice (and similar to the first image we did), but the darkness in the midground center of the image and at the bottom right are really unattractive. I'm also not surprised that the network did some weird things with the architecturally rendered little white house from the original painting. It seems like that angularity and color is sort of dotted at a small scale along the horizon of the output image, but it's not a very good translation.
+Oh no, this one is even worse! Another incongruous set of images leads to another murky result. The network has gone really off the rails on the sky, which looks like mountains, but like nothing from either source image. Some of the vertical texture in the forground looks nice (and similar to the first image we did), but the darkness in the midground center of the image and at the bottom right are really unattractive. I'm also not surprised that the network did some weird things with the architecturally rendered little white house from the original painting. It seems like that angularity and color is sort of dotted at a small scale along the horizon of the output image, but it's not a very good translation.
 
-So let's go back and look at the photo Ekone again. That one seemed close in composition to many of these artworks, and gave a pretty nice result. I wonder how that same photo might look filtered by other paintings.
+So let's go back and look at the photo Ekone again. 
+
+![original Ekone](/img/Ekone.1004.jpg) 
+>Ekone, from author's snapshots
+
+That one seemed close in composition to many of these artworks, and gave a pretty nice result. I wonder how that same photo might look filtered by other paintings.
 
 ![original Autumn Light: The Heights] (/img/AutumnLightTheHeights.jpg)
->Deliverance, 30"H x 48"W, 2012, oil on panel
+>Autnumn Light: The Heights, 15"H x 24"W, oil on panel
 
-![original Hay Bales] (/img/Hay.jpg)
->Hay Bales, from author's snapshots
+![Autnumn Light x Ekone] (/img/autnumn%20to%20ekone.png)
+
+Well that's certainly vivid. It looks like a pretty nice rendition, actually. The vertical lines created by the trees in the original painting have come through, but in a weird place - up in the corner where the sky is. The sky apart from that looks nice, though, and the strong color and dimension of that sloping left-to-right hillside really comes through well.
+
+So what if we go back to the painting Deliverance, and put that on Ekone? Well, Deliverance has a hillside on the right of the image, and Ekone has a hill in the foreground over on the other side. Those mismatching areas of light and dark and the confusion it creates for the network about where to render the horizon line seem worth avoiding. I wonder though... what if we cannibalized my dad's artwork and just... flipped it? So that the general shape of each image better lines up?
+
+![original Deliverance - flipped] (/img/252505_Deliverance.jpg)
+>Deliverance, 30"H x 48"W, 2012, oil on panel (flipped horizontally by author)
+
+![original Ekone](/img/Ekone.1004.jpg) 
+>Ekone, from author's snapshots
+
+![Deliverance - flipped x Ekone] (/img/deliverance-flipped%20on%20ekone.png)
+
+Although this is sort of a technicolor nightmare, I like it best of all my outputs. The color and shading of the sky look really nice, although I prefer the rendering of vegetation in the fore- and mid-ground that we got on our first attempt (Summer Light x Ekone). I am really excited to see that the network has interpreted the hard near-horizontal line of rock in the far right mid-ground of the Ekone photo as a house, and has somewhat rendered it in the architectural style of the building in the Deliverance painting. This might disprove my "flipping" strategy a bit, as on the flipped Deliverance, that house was way off to the left as opposed to the far right. Maybe if they were closer, the network would have rendered the house more cleanly and more true to the light color in the painting, or maybe it would have correctly identified that area of the photo as not a house at all!
+
+Absolutely more testing and tinkering and trials are required. I have not even begun to dig into all the tweaks one can make to how this neural network works, and I look forward to becoming more of a power user. I'm excited about the possibilties for game art, too. 
+
+
+
+
