@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A Neural Network Art Forger of my Very Own
+title: A Neural Network Art Forger of My Very Own
 date: 2016-06-25
 ---
 
