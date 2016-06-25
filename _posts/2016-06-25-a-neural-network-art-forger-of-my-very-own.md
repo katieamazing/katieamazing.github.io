@@ -34,7 +34,7 @@ And it looks pretty nice in the end. The clouds don't look very good, and you ca
 
 So that was a pretty successful result. What about some less successful attempts?
 
-![original Reclamation] (/img/Reclamation.jpg)
+[![original Reclamation] (/img/Reclamation.jpg)](http://scottallenarchitectureseattle.com/artwork/)
 >Reclamation, 48"H x 64"W, 2012, oil on panel
 
 ![original Yellowstone] (/img/Yellowstone.jpg)
@@ -46,7 +46,7 @@ They both have some water features, and a blue, blue sky, but these are very dif
 
 And indeed, this one did not come out as well. The network has made some interesting color choices throughout, and the clouds look pretty cool. It is interesting how you can see visually the network identifying areas of similarity and contiguousness (the water in the foreground, the area of green land seperating it). It does a pretty amazing job at that, even as it muddies it up adding the dark red areas from the painting to the photo.
 
-![original Deliverance] (/img/Deliverance.jpg)
+[![original Deliverance] (/img/Deliverance.jpg)](http://scottallenarchitectureseattle.com/artwork/)
 >Deliverance, 30"H x 48"W, 2012, oil on panel
 
 ![original Hay Bales] (/img/Hay.jpg)
@@ -63,7 +63,7 @@ So let's go back and look at the photo Ekone again.
 
 That one seemed close in composition to many of these artworks, and gave a pretty nice result. I wonder how that same photo might look filtered by other paintings.
 
-![original Autumn Light: The Heights] (/img/AutumnLightTheHeights.jpg)
+[![original Autumn Light: The Heights] (/img/AutumnLightTheHeights.jpg)](http://scottallenarchitectureseattle.com/artwork/)
 >Autnumn Light: The Heights, 15"H x 24"W, oil on panel
 
 ![Autnumn Light x Ekone] (/img/autnumn%20to%20ekone.png)
