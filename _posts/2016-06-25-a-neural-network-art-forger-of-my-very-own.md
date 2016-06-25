@@ -10,7 +10,7 @@ When I got my first neural network running locally (using Torch and DeepStyle/ne
 
 I chose to start here, with a shot from eastern Washington state. This landscape is typical of my dad's artwork; in my preliminary research and experiments with DeepStyle, I found that similar compositions with semi-matching areas of light and dark led to better results and less visual confusion as the network renders features like horizon and foreground. More on that later.
 
-![original Summer Light](/img/SummerLightTheBackRoadtoNeils.jpg)
+[![original Summer Light](/img/SummerLightTheBackRoadtoNeils.jpg)](http://scottallenarchitectureseattle.com/artwork/)
 >Summer Light: The Back Road to Neil's Place (private collection). 15" x 24", oil on panel.
 
 ![original Ekone](/img/Ekone.1004.jpg) 
@@ -78,7 +78,7 @@ So what if we go back to the painting Deliverance, and put that on Ekone? Well, 
 ![original Ekone](/img/Ekone.1004.jpg) 
 >Ekone, from author's snapshots
 
-![Deliverance - flipped x Ekone] (/img/deliverance-flipped%20on%20ekone.png)
+![Deliverance - flipped x Ekone](/img/deliverance-flipped%20on%20ekone.png)
 
 Although this is sort of a technicolor nightmare, I like it best of all my outputs. The color and shading of the sky look really nice, although I prefer the rendering of vegetation in the fore- and mid-ground that we got on our first attempt (Summer Light x Ekone). I am really excited to see that the network has interpreted the hard near-horizontal line of rock in the far right mid-ground of the Ekone photo as a house, and has somewhat rendered it in the architectural style of the building in the Deliverance painting. This might disprove my "flipping" strategy a bit, as on the flipped Deliverance, that house was way off to the left as opposed to the far right. Maybe if they were closer, the network would have rendered the house more cleanly and more true to the light color in the painting, or maybe it would have correctly identified that area of the photo as not a house at all!
 
