@@ -10,7 +10,7 @@ When I got my first neural network running locally (using Torch and DeepStyle/ne
 
 I chose to start here, with a shot from eastern Washington state. This landscape is typical of my dad's artwork; in my preliminary research and experiments with DeepStyle, I found that similar compositions with semi-matching areas of light and dark led to better results and less visual confusion as the network renders features like horizon and foreground. More on that later.
 
-![original Summer Light](img/SummerLightTheBackRoadtoNeils.jpg)
+ ![original Summer Light] (img/SummerLightTheBackRoadtoNeils.jpg)
 >Summer Light: The Back Road to Neil's Place (private collection). 15" x 24", oil on panel.
 
 ![original Ekone](/img/Ekone.1004.jpg) 
