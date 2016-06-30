@@ -95,7 +95,7 @@ Although this is sort of a technicolor nightmare, I like it best of all my outpu
 
 Next Steps?
 
-Absolutely more testing and tinkering and trials are required. I have not even begun to dig into all the tweaks one can make to how this neural network works, and I look forward to becoming more of a power user. I need to work on speeding the rendering process up, or at least writing some bash scrips so it can automatically render a whole bunch of them overnight (I'm using CPU power only, having been scared off of trying to get my video card involved. I only bricked up my Windows install once on this project, and I wasn't eager to repeat the experience!) I've been putting some images with people through the network, and those are coming out alternately terrifying and interesting. I'm excited about the possibilities for game art, too. 
+Absolutely more testing and tinkering and trials are required. I have not even begun to dig into all the tweaks one can make to how this neural network works, and I look forward to becoming more of a power user. I need to work on speeding the rendering process up, or at least writing some bash scrips so it can automatically render a whole bunch of them overnight (I'm using CPU power only, having been scared off of trying to get my video card involved. I only bricked up my Windows install once on this project, but I wasn't eager to repeat the experience). I've been putting some images with people through the network, and those are coming out alternately terrifying and interesting. I'm excited about the possibilities for game art, too. 
 
 I'm excited about playing with this tool to gain a better understanding of what it is my neural network is doing and thinking and feeling: http://playground.tensorflow.org/
 
