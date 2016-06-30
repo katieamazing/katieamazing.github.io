@@ -11,5 +11,7 @@ I discovered a useful hack for motivation along the way, which is something that
 This was also a first try at getting my game a little "juicy," as discussed in this outstanding talk [here](https://www.youtube.com/watch?v=Fy0aCDmgnxg) and in [this repo](https://github.com/grapefrukt/juicy-breakout) on GitHub. This also added to the fun, and though I have a lot more ideas for cute thematic juices for this, I think it's time to wrap it up. I have liked the training wheels of CodeSkulptor, but I'm concerned I've become a little dependant. I am going to try and make some interactive stuff with other engines and languages for awhile, lest I go full Pythonic!
 
 Anyway, here's a gameplay gif which I apologize for the size of:
+
 !(https://github.com/katieamazing/breakout/blob/master/writeup/gameplay.gif)
+
 And here's the link to play it if you would like: http://www.codeskulptor.org/#user41_6ihwWziNcT_58.py
