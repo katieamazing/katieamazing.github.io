@@ -14,6 +14,4 @@ Anyway, here's a gameplay gif which I apologize for the size of:
 
 ![Bubble Bricks Gameplay](https://github.com/katieamazing/breakout/blob/master/writeup/gameplay.gif)
 
-![stuff](http://www.picgifs.com/mini-graphics/mini-graphics/balloons/mini-graphics-balloons-928075.gif)
-
 And here's the link to read the code and play it if you would like: [http://www.codeskulptor.org/#user41_6ihwWziNcT_58.py](http://www.codeskulptor.org/#user41_6ihwWziNcT_58.py)
