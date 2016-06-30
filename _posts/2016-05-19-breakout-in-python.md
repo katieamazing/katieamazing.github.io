@@ -12,6 +12,6 @@ This was also a first try at getting my game a little "juicy," as discussed in t
 
 Anyway, here's a gameplay gif which I apologize for the size of:
 
-!(https://github.com/katieamazing/breakout/blob/master/writeup/gameplay.gif)
+![Bubble Bricks Gameplay](https://github.com/katieamazing/breakout/blob/master/writeup/gameplay.gif)
 
 And here's the link to play it if you would like: http://www.codeskulptor.org/#user41_6ihwWziNcT_58.py
