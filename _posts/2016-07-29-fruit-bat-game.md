@@ -20,8 +20,6 @@ The Art Part
 
 As a personal challenge to myself, I did not do any drawn artwork or spriting for this project. I often find that I use my art as a crutch in game making to cover for lazy programming or a less-than-solid command of my programming tools. I knew I wanted to create a character with some prizes to pick up in the maze, and I thought that making some fruit using LOVE2d's draw functions would be fun. And what needs fruit except a fruit bat?
 
-Image | Text
---- | ---
 ![Procedural berries](/img/berries.jpg) | I made three kinds of berries from the same code, which involved implementing a class system in Lua. The code randomizes the qualities of 16 "pips", or the little circles the berries are made of. The jitter allows for slight deviations of each pip's size, location, and color, and I really like the effect.
 
 
