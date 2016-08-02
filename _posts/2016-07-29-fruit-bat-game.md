@@ -24,7 +24,7 @@ As a personal challenge to myself, I did not do any drawn artwork or spriting fo
 
 ![Blueberry](/img/blueberry.jpg)    I made a blueberry from circles and polygons, and set the primitives to be a stencil. I then drew a square using a gradient library that got masked through the shape I defined with the stencil.
 
-![Magical Colorshifting Apple](/img/magic_apple.gif)   To add something really special and rare, I added an apple made of primitives and used a fun color shift shader.
+![Magical Colorshifting Apple](/img/magic_apple.gif)   To add something really special and rare, I made an apple of primitives and used a fun color shift shader.
 
 ![Batty](/img/batty.jpg)    And finally, I made an adorable little bat to walk around the maze. His only animation is the highlights on his eyes, which shift around depending on what direction he's moving.
 
