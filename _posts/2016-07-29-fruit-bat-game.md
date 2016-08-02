@@ -1,6 +1,6 @@
 ---
 layout: post
-title: An Fruit Bat Game in LOVE2d
+title: A Fruit Bat Game made with Love
 date: 2016-07-29
 ---
 
@@ -23,3 +23,18 @@ I made three kinds of berries from the same code, which involved implementing a 
 --berries--
 I made a blueberry from circles and polygons, and set the primitives to be a stencil. I then drew a square using a gradient library that got masked through the shape I defined with the stencil:
 --blueberry--
+To add something really special and rare, I added an apple made of primitives and used a fun color shift shader:
+--apple--
+And finally, I made an adorable little bat to walk around the maze. His only animation is the highlights on his eyes, which shift around depending on what direction he's moving:
+--batty--
+One of the neatest things to me about this art is that because it is being drawn in real time by the program using math, it would be easy to scale this and have it still look nice and crisp at 2x or even 10x the size.
+
+The Moving and Collision Part
+
+This was without a doubt the most painful part of this project for me. I initially had a sliding movement that just added or subtracted to the player's coordinates depending on the button pressed. This worked alright, but had an annoying quality around the edges or openings of the maze. The collision detection was making it annoying to line the batty up accurately so that you could slip through an opening. I tried many things to address this irritating quality:
++ Making the movement steps larger/allowing one step per keypress: Increasing the movement from two pixels per key handler to 32 pixels per key handler solved the issue by forcing the player to always be snapped to the grid, but made movement way too fast. Locking the keypress and only allowing another keypress after the key was released solved the velocity issue, but made gameplay carpal-tunnel-inducing and not very fun.
++ Tweaking where the collision was being tested: Many tweaking and tinkering operations didn't seem to address the problem sufficiently either. Most of what I tried allowed the batty character to overlap with the maze, which was not the aesthetic look I wanted.
++ Moving on rails: Force-snapping the batty to the grid seemed like a decent option, but implementing it was very challenging. I gave up on trying this after realizing that even if the batty snapped to the grid on every keyup event, the player would still have the same issues if they held keys down while sliding around the map (as I was doing while playtesting). I thought the feel might be really rigid and unfun with this solution, as well as being unsure how to implement it.
++ Circle-Rect collision:
+
+My actual solution
