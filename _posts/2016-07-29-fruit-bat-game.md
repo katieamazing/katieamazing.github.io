@@ -22,20 +22,26 @@ As a personal challenge to myself, I did not do any drawn artwork or spriting fo
 
 ![Procedural berries](/img/berries.jpg)   I made three kinds of berries from the same code, which involved implementing a class system in Lua. The code randomizes the qualities of 16 "pips", or the little circles the berries are made of. The jitter allows for slight deviations of each pip's size, location, and color, and I really like the effect.
 
-![Blueberry](/img/blueberry.jpg)    I made a blueberry from circles and polygons, and set the primitives to be a stencil. I then drew a square using a gradient library that got masked through the shape I defined with the stencil:
+![Blueberry](/img/blueberry.jpg)    I made a blueberry from circles and polygons, and set the primitives to be a stencil. I then drew a square using a gradient library that got masked through the shape I defined with the stencil.
 
-![Magical Colorshifting Apple](/img/magic_apple.gif)   To add something really special and rare, I added an apple made of primitives and used a fun color shift shader:
+![Magical Colorshifting Apple](/img/magic_apple.gif)   To add something really special and rare, I added an apple made of primitives and used a fun color shift shader.
 
-![Batty](/img/batty.jpg)    And finally, I made an adorable little bat to walk around the maze. His only animation is the highlights on his eyes, which shift around depending on what direction he's moving:
+![Batty](/img/batty.jpg)    And finally, I made an adorable little bat to walk around the maze. His only animation is the highlights on his eyes, which shift around depending on what direction he's moving.
 
 One of the neatest things to me about this art is that because it is being drawn in real time by the program using math, it would be easy to scale this and have it still look nice and crisp at 2x or even 10x the size.
 
 The Moving and Collision Part
 
 This was without a doubt the most painful part of this project for me. I initially had a sliding movement that just added or subtracted to the player's coordinates depending on the button pressed. This worked alright, but had an annoying quality around the edges or openings of the maze. The collision detection was making it annoying to line the batty up accurately so that you could slip through an opening. I tried many things to address this irritating quality:
-+ Making the movement steps larger/allowing one step per keypress: Increasing the movement from two pixels per key handler to 32 pixels per key handler solved the issue by forcing the player to always be snapped to the grid, but made movement way too fast. Locking the keypress and only allowing another keypress after the key was released solved the velocity issue, but made gameplay carpal-tunnel-inducing and not very fun.
-+ Tweaking where the collision was being tested: Many tweaking and tinkering operations didn't seem to address the problem sufficiently either. Most of what I tried allowed the batty character to overlap with the maze, which was not the aesthetic look I wanted.
-+ Moving on rails: Force-snapping the batty to the grid seemed like a decent option, but implementing it was very challenging. I gave up on trying this after realizing that even if the batty snapped to the grid on every keyup event, the player would still have the same issues if they held keys down while sliding around the map (as I was doing while playtesting). I thought the feel might be really rigid and unfun with this solution, as well as being unsure how to implement it.
-+ Circle-Rect collision:
+- Making the movement steps larger/allowing one step per keypress: Increasing the movement from two pixels per key handler to 32 pixels per key handler solved the issue by forcing the player to always be snapped to the grid, but made movement way too fast. Locking the keypress and only allowing another keypress after the key was released solved the velocity issue, but made gameplay carpal-tunnel-inducing and not very fun.
+- Tweaking Collision Tests: Many tweaking and tinkering operations didn't seem to address the problem sufficiently either. Most of what I tried allowed the batty character to overlap with the maze, which was not the aesthetic look I wanted.
+- Moving on Rails: Force-snapping the batty to the grid seemed like a decent option, but implementing it was very challenging. I gave up on trying this after realizing that even if the batty snapped to the grid on every keyup event, the player would still have the same issues if they held keys down while sliding around the map (as I was doing while playtesting). I thought the feel might be really rigid and unfun with this solution, as well as being unsure how to implement it.
+- If Collide, then Slide: When a collision occurs, slide the player in an appropriate-based-on-last-movement direction. So, you can't move to the left anymore, but you'll instead slide up or down until you can move left. This seemed confusing to me, and imprecise as far as how I imagine it might feel.
+- Circle-Rect collision: Instead of checking collision against sharp corners, check collision between the center point of the batty and set of circles which pad the sharp edges of the maze blocks with curves. This seemed like a good way to let the player slide smoothly around the corners, but I was hesitant to implement something that was this many LOC. In retrospect, my eventual solution was more verbose than this option, and my concerns about running another for loop to iterate over each maze block and draw circles and test for collision likely wouldn not have been an issue.
 
-My actual solution
+My actual solution ended up being a step of 32 pixels (taking part of my first attempted solution), and adding a tweening library to smooth the movement and address to "too fast" issue. Getting the tweening library working was agonizing - I found a promising library on the LOVE2d forums, but the most recent version from GitHub ended up not working for me (not sure why, possibly a version issue or a critical bug). I eventually got it working when I unzipped an older demo .love and found a different version of the tween.lua library. After that headache came the getting the tweening to work correctly with the batty, keypresses, and collision. The upshot is that after all that, I had a tweening library ready to go for the next step of my project.
+
+Infinite Levels, Infinite Score
+
+
+
