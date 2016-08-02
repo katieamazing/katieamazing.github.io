@@ -1,10 +1,10 @@
 ---
 layout: post
-title: A Fruit Bat Game made with Love
+title: A Fruity Game Made with Löve
 date: 2016-07-29
 ---
 
-Like the rest of the world, I have been getting excited about procedural generation. I thought it might be fun to make a simple Pac-Man-like game to feature an infinitely generated maze. I chose to work in Lua within the LOVE2d framework to keep pushing myself to learn new languages - and I'm finding that the more GUI output I do in different languages, the easier I find it to identify and exploit the commonalities.
+Like the rest of the world, I have been getting excited about procedural generation. I thought it might be fun to make a simple Pac-Man-like game to feature an infinitely generated maze. I chose to work in Lua within the LÖVE2d framework to keep pushing myself to learn new languages - and I'm finding that the more GUI output I do in different languages, the easier I find it to identify and exploit the commonalities.
 
 The Maze Part
 
@@ -18,7 +18,7 @@ Next step was to convert this console text output into something graphical. Rath
 
 The Art Part
 
-As a personal challenge to myself, I did not do any drawn artwork or spriting for this project. I often find that I use my art as a crutch in game making to cover for lazy programming or a less-than-solid command of my programming tools. I knew I wanted to create a character with some prizes to pick up in the maze, and I thought that making some fruit using LOVE2d's draw functions would be fun. And what needs fruit except a fruit bat?
+As a personal challenge to myself, I did not do any drawn artwork or spriting for this project. I often find that I use my art as a crutch in game making to cover for lazy programming or a less-than-solid command of my programming tools. I knew I wanted to create a character with some prizes to pick up in the maze, and I thought that making some fruit using LÖVE2d's draw functions would be fun. And what needs fruit except a fruit bat?
 
 ![Procedural berries](/img/berries.jpg)   I made three kinds of berries from the same code, which involved implementing a class system in Lua. The code randomizes the qualities of 16 "pips", or the little circles the berries are made of. The jitter allows for slight variations of each pip's size, location, and color, and I really like the effect.
 
@@ -51,3 +51,6 @@ High Scores
 
 Lastly, I implemented a high scores table using webscript.io. This appears on the splash screen of the game and can be accessed any time by clicking anywhere in the game window. So long as your score is greater than zero, you can submit your name (well, six characters of your name), and your current score. The program sends the score to webscript.io, which returns a truncated top-ten list in descending order. Finally, we take that data, turn it back into a Lua table, and print it out for the player to see. This was my first experience with decoding JSON and working with HTTP GET/POST methods, and I was really glad to have someone helping me out on this last feature.
 
+Final Thoughts
+
+Overall, this was a great first project to complete in Lua/LÖVE. My experiences with some 3rd party libraries were painful, but very educational. I am really proud of how this looks and plays, despite its simplicity, and I'm thrilled I did it without resorting to my familiar habits of Python/CodeSkuptor and/or drawn artwork. I'm also pleased that I didn't succumb to too much feature bloat while working on this (the high scores table was my only moment of weakness). 
