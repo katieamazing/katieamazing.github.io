@@ -20,13 +20,21 @@ The Art Part
 
 As a personal challenge to myself, I did not do any drawn artwork or spriting for this project. I often find that I use my art as a crutch in game making to cover for lazy programming or a less-than-solid command of my programming tools. I knew I wanted to create a character with some prizes to pick up in the maze, and I thought that making some fruit using LOVE2d's draw functions would be fun. And what needs fruit except a fruit bat?
 I made three kinds of berries from the same code, which involved implementing a class system in Lua. The code randomizes the qualities of 16 "pips", or the little circles the berries are made of. The jitter allows for slight deviations of each pip's size, location, and color, and I really like the effect:
+
 ![Procedural berries](/img/berries.jpg)
+
 I made a blueberry from circles and polygons, and set the primitives to be a stencil. I then drew a square using a gradient library that got masked through the shape I defined with the stencil:
+
 ![Blueberry](/img/blueberry.jpg)
+
 To add something really special and rare, I added an apple made of primitives and used a fun color shift shader:
+
 ![Magical Colorshifting Apple](/img/magic_apple.gif)
+
 And finally, I made an adorable little bat to walk around the maze. His only animation is the highlights on his eyes, which shift around depending on what direction he's moving:
+
 ![Batty](/img/batty.jpg)
+
 One of the neatest things to me about this art is that because it is being drawn in real time by the program using math, it would be easy to scale this and have it still look nice and crisp at 2x or even 10x the size.
 
 The Moving and Collision Part
