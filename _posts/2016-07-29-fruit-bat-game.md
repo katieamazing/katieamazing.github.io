@@ -32,7 +32,7 @@ One of the neatest things to me about this art is that because it is being drawn
 
 The Moving and Collision Part
 
-This was without a doubt the most painful part of this project for me. I initially had a sliding movement that just added or subtracted to the player's coordinates depending on the button pressed. This worked alright, but had an annoying quality around the edges or openings of the maze. The collision detection was making it hard to line the batty up accurately so that you could slip through an opening. I tried many things to address this irritating quality:
+This was without a doubt the most painful part of this project for me. I initially had a sliding movement that just added or subtracted to the player's coordinates depending on the button pressed. This worked alright, but had an annoying quality around the edges or openings of the maze. The collision detection was making it hard to line the batty up accurately so that you could slip through an opening. I tried Many Things to address this irritating quality:
 <ul>
   <li>Making the movement steps larger/allowing one step per keypress: Increasing the movement from two pixels per key handler to 32 pixels per key handler solved the issue by forcing the player to always be snapped to the grid, but made movement way too fast. Locking the keypress and only allowing another keypress after the key was released solved the velocity issue, but made gameplay carpal-tunnel-inducing and not very fun.</li>
   <li>Tweaking Collision Tests: Many tweaking and tinkering operations didn't seem to address the problem sufficiently either. Most of what I tried allowed the batty character to overlap with the maze, which was not the aesthetic look I wanted.</li>
@@ -45,7 +45,7 @@ My actual solution ended up being a step of 32 pixels (taking part of my first a
 
 Infinite Levels, Infinite Score
 
-I knew I wanted to have an infinite, zen feeling to this little game. I created a score bar with a dual tracking functionality (the bar fills with color as you near the next level, and the text on top of the bar tells you your accumulative points so far). I could have opted for just a ginormous maze, but I think it's more fun to feel like you've exhausted a level, and then move on the next. I was inspired by Stardew Valley's mines and by Crypt of the Necrodancer's leveling in that when you have collected a certain number of points per level, we do a level transfer step where a trapdoor opens up, the batty falls through, and you get a new level of the maze to explore. Lastly, your score is saved locally every time you move to a new level, so when you restart the game, you'll start with your previous score.
+I knew I wanted to have an infinite, zen feeling to this little game. I created a score bar with a dual tracking functionality (the bar fills with color as you near the next level, and the text on top of the bar tells you your accumulative points so far). I could have opted for just a ginormous maze, but I think it's more fun to feel like you've exhausted a level, and then move on the next. I was inspired by Stardew Valley's mines and by Crypt of the Necrodancer's leveling in that when you have collected a certain number of points per level, we do a level transfer step where a trapdoor opens up, the batty falls through, and you get a new level of the maze to explore. I used the tweening library that I finally felt like I had a handle on to animate the trapdoor and the batty's movement into it. Lastly, the score is saved locally every time you move to a new level, so when you restart the game, you'll start with your previous score.
 
 High Scores
 
@@ -55,7 +55,7 @@ Lastly, I implemented a high scores table using webscript.io. This appears on th
 
 Final Thoughts
 
-Overall, this was a great first project to complete in Lua/LÖVE. My experiences with some 3rd party libraries were painful, but very educational. I am really proud of how this looks and plays, despite its simplicity, and I'm thrilled I did it without resorting to my familiar habits of Python/CodeSkuptor and/or drawn artwork. I'm also pleased that I didn't succumb to too much feature bloat while working on this (the high scores table was my only moment of weakness). The distribution step that I was very intimidated by went really smoothly, as well.
+Overall, this was a great first project to complete in Lua/LÖVE. My experiences with some 3rd party libraries were painful, but very educational. I am really proud of how this looks and plays, despite its simplicity, and I'm thrilled I did it without resorting to my familiar habits of Python/CodeSkuptor and/or drawn artwork. I'm also pleased that I didn't succumb to too much feature bloat while working on this (the high scores table was my only moment of weakness). The distribution step that I was worried about went smoothly, as well.
 
 **Go play it, post your score!**
 
