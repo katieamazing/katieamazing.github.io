@@ -53,4 +53,8 @@ Lastly, I implemented a high scores table using webscript.io. This appears on th
 
 Final Thoughts
 
-Overall, this was a great first project to complete in Lua/LÖVE. My experiences with some 3rd party libraries were painful, but very educational. I am really proud of how this looks and plays, despite its simplicity, and I'm thrilled I did it without resorting to my familiar habits of Python/CodeSkuptor and/or drawn artwork. I'm also pleased that I didn't succumb to too much feature bloat while working on this (the high scores table was my only moment of weakness). 
+Overall, this was a great first project to complete in Lua/LÖVE. My experiences with some 3rd party libraries were painful, but very educational. I am really proud of how this looks and plays, despite its simplicity, and I'm thrilled I did it without resorting to my familiar habits of Python/CodeSkuptor and/or drawn artwork. I'm also pleased that I didn't succumb to too much feature bloat while working on this (the high scores table was my only moment of weakness). The distribution step that I was very intimidated by went really smoothly, as well.
+
+Go play it, post your score!
+If you have LÖVE 0.10.1, click [HERE](https://github.com/katieamazing/katieamazing.github.io/blob/master/host/fruity.love?raw=true) to download. 
+If you don't have LÖVE, click [HERE](https://github.com/katieamazing/katieamazing.github.io/raw/master/host/fruitylove.zip) to download a .zip file with the game.exe inside.
