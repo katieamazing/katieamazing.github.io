@@ -51,6 +51,8 @@ High Scores
 
 Lastly, I implemented a high scores table using webscript.io. This appears on the splash screen of the game and can be accessed any time by clicking anywhere in the game window. So long as your score is greater than zero, you can submit your name (well, six characters of your name), and your current score. The program sends the score to webscript.io, which returns a truncated top-ten list in descending order. Finally, we take that data, turn it back into a Lua table, and print it out for the player to see. This was my first experience with decoding JSON and working with HTTP GET/POST methods, and I was really glad to have someone helping me out on this last feature.
 
+![An early screenshot of the high scores list](/img/scores_kinda_working.jpg)
+
 Final Thoughts
 
 Overall, this was a great first project to complete in Lua/LÖVE. My experiences with some 3rd party libraries were painful, but very educational. I am really proud of how this looks and plays, despite its simplicity, and I'm thrilled I did it without resorting to my familiar habits of Python/CodeSkuptor and/or drawn artwork. I'm also pleased that I didn't succumb to too much feature bloat while working on this (the high scores table was my only moment of weakness). The distribution step that I was very intimidated by went really smoothly, as well.
