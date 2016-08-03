@@ -4,7 +4,7 @@ title: A Fruity Game Made with Löve
 date: 2016-07-29
 ---
 
-Like the rest of the world, I have been getting excited about procedural generation. I thought it might be fun to make a simple Pac-Man-like game to feature an infinitely generated maze. I chose to work in Lua within the LÖVE2d framework to keep pushing myself to learn new languages - and I'm finding that the more GUI output I do in different languages, the easier I find it to identify and exploit the commonalities.
+Like the rest of the world, I have been getting excited about procedural generation. I thought it might be fun to make a simple Pac-Man-like game to feature an infinitely generated maze. I chose to work in Lua within the LÖVE2d framework to keep pushing myself to learn new languages. I'm finding that the more graphical output I do in different languages, the easier I find it to identify and exploit the commonalities.
 
 The Maze Part
 
