@@ -1,2 +1,2 @@
 # katieamazing.github.io
-Lorem ipsum
+This is a blog.
