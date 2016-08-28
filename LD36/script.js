@@ -180,7 +180,7 @@ document.body.appendChild(renderer.view);
 
 // create the root of the scene graph
 var stage = new PIXI.Container();
-
+/*
 var room_debug = new PIXI.Graphics();
 room_debug.beginFill(0x777777); // grey
 for (var room_name in rooms) {
@@ -190,10 +190,10 @@ for (var room_name in rooms) {
 room_debug.endFill();
 
 stage.addChild(room_debug);
+*/
 
-// TODO
-//var bg = new PIXI.Sprite(new PIXI.Texture.fromImage('imgs/1835-27_UImockup.png', true));
-//stage.addChild(bg);
+var bg = new PIXI.Sprite(new PIXI.Texture.fromImage('imgs/1835-27_UImockup.png', true));
+stage.addChild(bg);
 
 function drawDiamond(graphics) {
 	graphics.drawPolygon([
