@@ -1,6 +1,6 @@
 var WIDTH = 640; // pixels
 var HEIGHT = 360; // pixels
-var TEXT_WIDTH = 382; // pixels
+var TEXT_WIDTH = 378; // pixels
 var PADDING = 8; // pixels to right and bottom of text
 var SCROLL_SPEED = 0.01; // pixels per millisecond
 var PLAYER_SPEED = 0.001; // pixels per millisecond
