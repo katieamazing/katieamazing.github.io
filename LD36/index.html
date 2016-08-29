@@ -653,7 +653,7 @@ renderer.view.addEventListener("click", function (e) {
         npcSprite.position.y = HEIGHT - 10;
         alphaNPC = 5.0;
         npcSprite.alpha = Math.min(alphaNPC, 1.0);
-        textNPC.alpha = Math.min(alphaNPC, 1.0);
+        textNPC.alpha = npcSprite.alpha;
         stage.addChild(npcSprite);
         
         //maybe use a loader, so we can get the Imageheight/width better?
@@ -694,6 +694,7 @@ function alphaDecay(dt){ //TODO MAKE THIS ACTUALLY WORK
     console.log('alphaNPC is now: ', alphaNPC);
     alphaNPC -= 0.01;
     npcSprite.alpha = Math.min(alphaNPC, 1.0);
+    textNPC.alpha = npcSprite.alpha;
   }
 }
 
