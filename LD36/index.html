@@ -690,6 +690,7 @@ renderer.view.addEventListener("click", function (e) {
 
 function alphaDecay(dt){ //TODO MAKE THIS ACTUALLY WORK
   if (alphaNPC > 0.0) {
+    console.log('alphaNPC is now: ', alphaNPC);
     alphaNPC -= 0.05;
     npcSprite.alpha = alphaNPC;
   }
