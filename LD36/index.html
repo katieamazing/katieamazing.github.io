@@ -652,7 +652,8 @@ renderer.view.addEventListener("click", function (e) {
         npcSprite.position.x = 10;
         npcSprite.position.y = HEIGHT - 10;
         alphaNPC = 5.0;
-        npcSprite.alpha = alphaNPC;
+        npcSprite.alpha = Math.min(alphaNPC, 1.0);
+        textNPC.alpha = Math.min(alphaNPC, 1.0);
         stage.addChild(npcSprite);
         
         //maybe use a loader, so we can get the Imageheight/width better?
