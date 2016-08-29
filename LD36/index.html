@@ -406,17 +406,27 @@ document.body.appendChild(renderer.view);
 var stage = new PIXI.Container();
 
 // --------------------- ROOM DEBUG -----------------------
-var room_debug = new PIXI.Graphics();
-room_debug.beginFill(0x777777); // grey
-for (var room_name in rooms) {
-	var room = rooms[room_name];
-	room_debug.drawRect(
-		room.x + 10, room.y + 10,
-		room.right - room.x - 10, room.bottom - room.y - 10
-	);
-}
-room_debug.endFill();
-stage.addChild(room_debug);
+//var room_debug = new PIXI.Graphics();
+//room_debug.beginFill(0x777777); // grey
+//for (var room_name in rooms) {
+//	var room = rooms[room_name];
+//	room_debug.drawRect(
+//		room.x + 10, room.y + 10,
+//		room.right - room.x - 10, room.bottom - room.y - 10
+//	);
+//}
+//room_debug.endFill();
+//mid.addChild(room_debug);
+
+// --------------------- BG -------------------------------
+var bg = new PIXI.Sprite(new PIXI.Texture.fromImage('imgs/UIbg.png', true));
+stage.addChild(bg);
+
+var mid = new PIXI.Container();
+stage.addChild(mid);
+
+var fg = new PIXI.Sprite(new PIXI.Texture.fromImage('imgs/UI_frame.png', true));
+stage.addChild(bg);
 
 // ------------------------ TEXT ZONE --------------------
 var textZone = new PIXI.Text('ANCIENT TECHNOLOGY\n\n', {
@@ -428,7 +438,7 @@ var textZone = new PIXI.Text('ANCIENT TECHNOLOGY\n\n', {
 });
 textZone.x = WIDTH - TEXT_WIDTH - PADDING;
 textZone.y = 0;
-stage.addChild(textZone);
+mid.addChild(textZone);
 
 var textNPC = new PIXI.Text('\n', {
 	wordWrap: true,
@@ -440,7 +450,7 @@ var textNPC = new PIXI.Text('\n', {
 });
 textNPC.x = 150;
 textNPC.y = 270;
-stage.addChild(textNPC);
+mid.addChild(textNPC);
 
 
 // A graphical character is a diamond that can walk around the
@@ -456,7 +466,7 @@ function GraphicalCharacter(x, y, color, locations) {
 	this.graphics.x = x;
 	this.graphics.y = y;
 	this.locations = locations;
-	stage.addChild(this.graphics);
+	mid.addChild(this.graphics);
 };
 
 function doNothing() {
@@ -645,7 +655,7 @@ renderer.view.addEventListener("click", function (e) {
 			if (maybe_character_clicked.graphical_character.room() == player.room()) {
 				focus_npc = maybe_character_clicked.name;
         //TODO: draw the sprite
-        stage.removeChild(npcSprite);
+        mid.removeChild(npcSprite);
         npcSprite = new PIXI.Sprite(new PIXI.Texture.fromImage(maybe_character_clicked.sprite));
         npcSprite.anchor.x = 0;
         npcSprite.anchor.y = 1;
@@ -654,7 +664,7 @@ renderer.view.addEventListener("click", function (e) {
         alphaNPC = 5.0;
         npcSprite.alpha = Math.min(alphaNPC, 1.0);
         textNPC.alpha = npcSprite.alpha;
-        stage.addChild(npcSprite);
+        mid.addChild(npcSprite);
         
         //maybe use a loader, so we can get the Imageheight/width better?
         //var loader = new PIXI.AssetLoader([  "images/imageOne.png",  "images/imageTwo.png",  "images/imageThree.png"]);loader.onComplete = setup;loader.load();function setup() {   //Create the sprite from the loaded image texture  var texture = PIXI.TextureCache["images/imageOne.png"];  var anySprite = new PIXI.Sprite(texture);}
@@ -1056,7 +1066,7 @@ var choices = [];
 
 function clearChoices() {
 	for (var i = 0; i < choices.length; i += 1) {
-		stage.removeChild(choices[i]);
+		mid.removeChild(choices[i]);
 	}
 	choices = [];
 	choice_verbs = [];
@@ -1072,7 +1082,7 @@ function addChoice(string_to_add, verb) {
 	});
 	text_to_add.x = WIDTH - TEXT_WIDTH - PADDING + CHOICES_INDENT;
 	text_to_add.y = 0;
-	stage.addChild(text_to_add);
+	mid.addChild(text_to_add);
 	choices.push(text_to_add);
 	choice_verbs.push(verb);
 }
