@@ -419,14 +419,14 @@ var stage = new PIXI.Container();
 //mid.addChild(room_debug);
 
 // --------------------- BG -------------------------------
-var bg = new PIXI.Sprite(new PIXI.Texture.fromImage('imgs/UIbg.png', true));
+var bg = new PIXI.Sprite(new PIXI.Texture.fromImage('imgs/UIbg.png'));
 stage.addChild(bg);
 
 var mid = new PIXI.Container();
 stage.addChild(mid);
 
-var fg = new PIXI.Sprite(new PIXI.Texture.fromImage('imgs/UI_frame.png', true));
-stage.addChild(bg);
+var fg = new PIXI.Sprite(new PIXI.Texture.fromImage('imgs/UI_frame.png'));
+stage.addChild(fg);
 
 // ------------------------ TEXT ZONE --------------------
 var textZone = new PIXI.Text('ANCIENT TECHNOLOGY\n\n', {
