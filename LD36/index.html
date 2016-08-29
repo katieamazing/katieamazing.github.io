@@ -649,8 +649,8 @@ renderer.view.addEventListener("click", function (e) {
         npcSprite = new PIXI.Sprite(new PIXI.Texture.fromImage(maybe_character_clicked.sprite));
         npcSprite.anchor.x = 0;
         npcSprite.anchor.y = 1;
-        npcSprite.position.x = 0;
-        npcSprite.position.y = HEIGHT;
+        npcSprite.position.x = 10;
+        npcSprite.position.y = HEIGHT - 10;
         alphaNPC = 1.0;
         npcSprite.alpha = alphaNPC;
         stage.addChild(npcSprite);
