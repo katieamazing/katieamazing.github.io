@@ -406,17 +406,17 @@ document.body.appendChild(renderer.view);
 var stage = new PIXI.Container();
 
 // --------------------- ROOM DEBUG -----------------------
-//var room_debug = new PIXI.Graphics();
-//room_debug.beginFill(0x777777); // grey
-//for (var room_name in rooms) {
-//	var room = rooms[room_name];
-//	room_debug.drawRect(
-//		room.x + 10, room.y + 10,
-//		room.right - room.x - 10, room.bottom - room.y - 10
-//	);
-//}
-//room_debug.endFill();
-//mid.addChild(room_debug);
+var room_debug = new PIXI.Graphics();
+room_debug.beginFill(0x777777); // grey
+for (var room_name in rooms) {
+	var room = rooms[room_name];
+	room_debug.drawRect(
+		room.x + 10, room.y + 10,
+		room.right - room.x - 10, room.bottom - room.y - 10
+	);
+}
+room_debug.endFill();
+mid.addChild(room_debug);
 
 // --------------------- BG -------------------------------
 var bg = new PIXI.Sprite(new PIXI.Texture.fromImage('imgs/UIbg.png'));
