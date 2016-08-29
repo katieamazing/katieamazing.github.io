@@ -752,6 +752,8 @@ function WalkOneRoom(who, room, door, arrive_callback) {
 	// we nudge the target point a little bit into the next room
 	//target.x += Math.sign(door.x - room.center.x) * (Math.random() + 3);
 	//target.y += Math.sign(door.y - room.center.y) * (Math.random() + 3);
+	target.x += Math.random()*3 - 1.5;
+	target.y += Math.random()*3 - 1.5;
 	return new Walk(who, target, arrive_callback);
 }
 
