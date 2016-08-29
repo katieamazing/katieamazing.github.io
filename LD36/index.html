@@ -27,7 +27,7 @@ var PLAYER_SIZE = 3; // pixels "radius";
 var BG_COLOR = 0x555555; // rgb
 var CHOICES_INDENT = 25; // pixels
 var LOREM_IPSUM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus nunc nibh, eu ultricies sem vestibulum ac. Duis venenatis tristique est, et suscipit libero. Etiam tempus felis ligula, in eleifend neque elementum vitae. Etiam sodales ligula sed nulla maximus varius in a turpis. Curabitur fringilla libero et quam facilisis, in sodales mi finibus. Vivamus accumsan metus vitae tristique pretium. Donec ultrices facilisis aliquet. Curabitur aliquam ex tellus, sed pellentesque enim pulvinar et. Proin lobortis nibh at luctus pulvinar. Cras at laoreet libero. Pellentesque facilisis, mi sit amet ornare scelerisque, mauris metus venenatis ligula, vel egestas lectus sem non diam. Nulla sed augue sem. Pellentesque velit lacus, tempor eget tincidunt nec, elementum eget lacus. Phasellus leo nisi, lobortis vitae nibh vitae, sodales facilisis lectus. Praesent et lacus a lorem pretium imperdiet. Phasellus a ligula vel enim ornare dapibus non vitae nibh.\n";
-var alphaNPC  = 1.0;
+var alphaNPC = 0.0;
 var MAP_RECT = { // the active region for click-to-move
 	x: 20, y: 26, 
 	width: WIDTH - TEXT_WIDTH - 8,
@@ -690,7 +690,8 @@ renderer.view.addEventListener("click", function (e) {
 
 function alphaDecay(dt){ //TODO MAKE THIS ACTUALLY WORK
   if (alphaNPC > 0.0) {
-    alphaNPC -= 0.05
+    alphaNPC -= 0.05;
+    npcSprite.alpha = alphaNPC;
   }
 }
 
@@ -792,6 +793,7 @@ function animate(timestamp) {
 	if (dt > 0) {
 		animate_tweens(dt);
 		scrollTextZone(dt);
+    alphaDecay(dt);
 		if (Math.random() < WALK_PROB) {
 			var npc = chooseDict(npcs);
 			npc.graphical_character.walkRandom(npc.name);
