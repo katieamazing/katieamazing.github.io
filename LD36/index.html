@@ -651,7 +651,7 @@ renderer.view.addEventListener("click", function (e) {
         npcSprite.anchor.y = 1;
         npcSprite.position.x = 10;
         npcSprite.position.y = HEIGHT - 10;
-        alphaNPC = 1.0;
+        alphaNPC = 5.0;
         npcSprite.alpha = alphaNPC;
         stage.addChild(npcSprite);
         
@@ -691,8 +691,8 @@ renderer.view.addEventListener("click", function (e) {
 function alphaDecay(dt){ //TODO MAKE THIS ACTUALLY WORK
   if (alphaNPC > 0.0) {
     console.log('alphaNPC is now: ', alphaNPC);
-    alphaNPC -= 0.05;
-    npcSprite.alpha = alphaNPC;
+    alphaNPC -= 0.01;
+    npcSprite.alpha = Math.min(alphaNPC, 1.0);
   }
 }
 
