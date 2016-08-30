@@ -19,7 +19,7 @@
 
 var WIDTH = 640; // pixels
 var HEIGHT = 360; // pixels
-var TEXT_WIDTH = 378; // pixels
+var TEXT_WIDTH = 360; // pixels
 var PADDING = 16; // pixels to right and bottom of text
 var SCROLL_SPEED = 0.1; // pixels per millisecond
 var PLAYER_SPEED = 0.05; // pixels per millisecond
@@ -327,7 +327,6 @@ var IntroduceRepeat = {
 			]
 		};
 		var text = generate(grammarBrushOff); 
-    //TODO not working - need to call function inna function??
 		addText(npcs[focus_npc].name+': '+text + '\n', mode.textZone);
 		npcs[focus_npc].juice -= 1;
 	}
@@ -344,6 +343,40 @@ var SmallTalk = {
 	attempt: function (focus_npc) {
 		console.log('you attempt to smalltalk');
     if (playerJuice >= npcs[focus_npc].req-2){
+        var grammarSmallTalk = {
+	    weather: ['rain', 'snow', 'wind', 'heat', 'sunshine', 'pleasant breeze', 'humidity', 'torrential flooding'],
+	    task: [
+	      'wash my togas',
+	      'air out my togas',
+	      'check in on my aging father and his mistress',
+	      'bathe',
+	      'hire a slave to fan me',
+	      'water my garden',
+	      'sweep my floors',
+	      'buy wood for my fireplace'
+	    ],
+	    activity: [
+	      'chopping some olives',
+	      'grinding spices',
+	      'folding my togas',
+	      'marinating cheese',
+	      'doing my hair',
+	      'anointing myself with oils',
+	      'pretenting to be a gladiator',
+	      'betting on chariot races',
+	      'writing pleas to the Caesar',
+	      'practicing wrestling',
+	    ],
+	    place: ['library', 'baths', 'kitchen', 'bathroom', 'dressing room', 'market'],
+	    origin: [
+	      'I don\'t mind the #weather# we have had lately, but I am worried about getting #weather# tomorrow. I wouldn\'t want to have to #task#.',
+	      'It\'s a nice day, isn\'t it? I won\'t have to #task# all week if this #weather# keeps up.',
+	      'My little garden is loving this #weather#.',
+	      'I hurt my finger while #activity# in the #place# last week, but it is feeling much better.',
+	      'I\'ve been so busy #activity# in the evenings that I haven\'t had a chance to #task# all week!',
+	      'I can\'t stand this #weather#, but at least I can stay inside #activity# during the day.'
+	    ]
+	  };
       var text = generate(grammarSmallTalk); 
       //TODO not working - need to call function inna function??
 		  addText(npcs[focus_npc].name+': '+text + '\n', mode.textZone);
@@ -365,8 +398,30 @@ var Flattery = {
 	attempt: function (focus_npc) {
 		console.log('you attempt flattery');
 		if (playerJuice >= npcs[focus_npc].req){
+		    var grammarFlattery = {
+			    attribute: [
+			      'eye color',
+			      'sense of adventure',
+			      'sense of humor',
+			      'work ethic',
+			      'pretty hair',
+			      'arms',
+			      'fashion sense',
+			      'toga',
+			      'outfit',
+			      'gladiator fan fiction'
+			    ],
+			    origin: [
+			      'Oh... t-thank you, you too.',
+			      'Wow, thank you! I like your #attribute# too.',
+			      'You really think my #attribute# is good?',
+			      'You are going to make me blush, being so nice about my #attribute#.',
+			      'Such kind words! Thank you.',
+			      'What generous praise! Gratitude, '+playerName+'.',
+			      'Thank you! Flattery will get you everywhere with me.'
+			    ]
+			  };
 		  var text = generate(grammarFlattery); 
-		  //TODO not working - need to call function inna function??
 			  addText(npcs[focus_npc].name+': '+text + '\n', mode.mid);
 			  npcs[focus_npc].juice += 1;
 		} else {
@@ -479,13 +534,13 @@ gameplay.start = function () {
   
   this.textNPC = new PIXI.Text('\n', {
     wordWrap: true,
-    wordWrapWidth: 270-150,
+    wordWrapWidth: 260-140,
     fontFamily: '"Microsoft Sans Serif", Monaco, monospace',
     fontSize: 10,
     fill: 0x211303,
     alpha: alphaNPC
   });
-  this.textNPC.x = 150;
+  this.textNPC.x = 140;
   this.textNPC.y = 270;
   this.mid.addChild(this.textNPC);
 
@@ -548,64 +603,7 @@ gameplay.start = function () {
     ]
   };
 
-  var grammarSmallTalk = {
-    weather: ['rain', 'snow', 'wind', 'heat', 'sunshine', 'pleasant breeze', 'humidity', 'torrential flooding'],
-    task: [
-      'wash my togas',
-      'air out my togas',
-      'check in on my aging father and his mistress',
-      'bathe',
-      'hire a slave to fan me',
-      'water my garden',
-      'sweep my floors',
-      'buy wood for my fireplace'
-    ],
-    activity: [
-      'chopping some olives',
-      'grinding spices',
-      'folding my togas',
-      'marinating cheese',
-      'doing my hair',
-      'anointing myself with oils',
-      'pretenting to be a gladiator',
-      'betting on chariot races',
-      'writing pleas to the Caesar',
-      'practicing wrestling',
-    ],
-    place: ['library', 'baths', 'kitchen', 'bathroom', 'dressing room', 'market'],
-    origin: [
-      'I don\'t mind the #weather# we have had lately, but I am worried about getting #weather# tomorrow. I wouldn\'t want to have to #task#.',
-      'It\'s a nice day, isn\'t it? I won\'t have to #task# all week if this #weather# keeps up.',
-      'My little garden is loving this #weather#.',
-      'I hurt my finger while #activity# in the #place# last week, but it is feeling much better.',
-      'I\'ve been so busy #activity# in the evenings that I haven\'t had a chance to #task# all week!',
-      'I can\'t stand this #weather#, but at least I can stay inside #activity# during the day.'
-    ]
-  };
 
-  var grammarFlattery = {
-    attribute: [
-      'eye color',
-      'sense of adventure',
-      'sense of humor',
-      'work ethic',
-      'pretty hair',
-      'arms',
-      'fashion sense',
-      'toga',
-      'outfit',
-      'gladiator fan fiction'
-    ],
-    origin: [
-      'Oh... t-thank you, you too.',
-      'Wow, thank you! I like your #attribute# too.',
-      'You really think my #attribute# is good?',
-      'You are going to make me blush, being so nice about my #attribute#.',
-      'Such kind words! Thank you.',
-      'What generous praise! Gratitude, '+playerName+'.',
-      'Thank you! Flattery will get you everywhere with me.'
-    ]
-  };
 	var allrooms = [];
 	for (var roomname in rooms){
 		allrooms.push(roomname);
