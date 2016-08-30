@@ -401,6 +401,7 @@ var Flattery = {
 	attempt: function (focus_npc) {
 		console.log('you attempt flattery');
 		if (playerJuice >= npcs[focus_npc].req){
+			console.log('suceeded at flattery')
 		    var grammarFlattery = {
 			    attribute: [
 			      'eye color',
@@ -425,7 +426,7 @@ var Flattery = {
 			    ]
 			  };
 		  var text = generate(grammarFlattery); 
-			  addText(npcs[focus_npc].name+': '+text + '\n', mode.mid);
+			addText(npcs[focus_npc].name+': '+text + '\n', mode.mid);
 			  npcs[focus_npc].juice += 1;
 			  playerJuice += 1;
 		} else {
@@ -449,6 +450,13 @@ var AskAboutWork = {
 		if (playerJuice >= npcs[focus_npc].req+3) {
 			addText(npcs[focus_npc].name+': '+npcs[focus_npc].work + '\n', mode.mid);
 		} else {
+			    var grammarBrushOffFriend = {
+			    desc: ['trade', 'guild\'s', 'family', 'heirloom'],
+			    origin: [
+			      'I\'m sorry, '+playerName+', I can\'t share my #desc# secrets.',
+			      'It\'s not that I don\'t trust you, but you are '+nationality+'. I can\'t tell you about that.'
+			    ]
+			  };
 			var text = generate(grammarBrushOffFriend); 
 			addText(npcs[focus_npc].name+': '+text + '\n', mode.mid);
 			npcs[focus_npc].juice -= 1;
@@ -469,7 +477,7 @@ var AskForTech = {
 	attempt: function (focus_npc) {
 		console.log('you attempt to ask for tech');
 		if (playerJuice >= npcs[focus_npc].req*2+2 && npcs[focus_npc].juice >= 4){
-			addText(npcs[focus_npc].name+': '+npcs[focus_npc].techdesc + '\n');
+			addText(npcs[focus_npc].name+': '+npcs[focus_npc].techdesc + '\n', mode.mid);
       collected_techs.push(npcs[focus_npc].tech);
 		} else {
       
