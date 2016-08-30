@@ -150,7 +150,7 @@ rooms['Peristyle'] = new Room({
 rooms['Solarium'] = new Room({
 	x: 112, y: 160, bottom: 207, right: 195, 
   name:'Solarium',
-  desc: 'You blink as you enter the bright solarium. There are beautiful hangings on the walls and welcoming places to sit or rest.'
+  desc: 'You blink as you enter the bright solarium. There are beautiful hangings on the walls and welcoming places to sit or rest. A duo of musicians plays in the corner.'
 });
 rooms['Workshop'] = new Room({
 	x: 105, y: 94, bottom: 160, right: 195, 
@@ -481,6 +481,7 @@ var AskForTech = {
 		if (playerJuice >= npcs[focus_npc].req*2+2 && npcs[focus_npc].juice >= 4){
 			addText(npcs[focus_npc].name+': '+npcs[focus_npc].techdesc + '\n', mode.textZone);
       collected_techs.push(npcs[focus_npc].tech);
+      maybe_win();
 		} else {
       
 		          var grammarBrushOffFriend = {
