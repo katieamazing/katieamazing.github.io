@@ -335,7 +335,7 @@ verbs.push(IntroduceRepeat);
 
 var SmallTalk = {
 	print: function (focus_npc) {
-		if (!npcs[focus_npc].introduced) {
+		if (!npcs[focus_npc].introduced && playerJuice >= npcs[focus_npc].req-3) {
 			return;
 		}
 		addChoice("Small talk with "+focus_npc, this, mode.mid);
@@ -382,7 +382,7 @@ var SmallTalk = {
 		  addText(npcs[focus_npc].name+': '+text + '\n', mode.textZone);
 		  npcs[focus_npc].juice += 1;
     } else {
-      addText(npcs[focus_npc].name+' doesn\'t seem interested in talking to you.', mode.textZone);
+      addText(npcs[focus_npc].name+' doesn\'t seem interested in talking to you.\n', mode.textZone);
     }
 	}
 };
@@ -390,7 +390,7 @@ verbs.push(SmallTalk);
 
 var Flattery = {
 	print: function (focus_npc) {
-		if (!npcs[focus_npc].introduced) {
+		if (!npcs[focus_npc].introduced && playerJuice >= npcs[focus_npc].req-1) {
 			return;
 		}
 		addChoice("Flatter " + focus_npc, this, mode.mid);
@@ -425,7 +425,7 @@ var Flattery = {
 			  addText(npcs[focus_npc].name+': '+text + '\n', mode.mid);
 			  npcs[focus_npc].juice += 1;
 		} else {
-		  addText(npcs[focus_npc].name+' doesn\'t seem interested in listening to you.', mode.mid);
+		  addText(npcs[focus_npc].name+' doesn\'t seem interested in listening to you.\n', mode.mid);
 		}
 	}
 };
