@@ -335,9 +335,9 @@ verbs.push(IntroduceRepeat);
 
 var SmallTalk = {
 	print: function (focus_npc) {
-		if (!npcs[focus_npc].introduced && playerJuice >= npcs[focus_npc].req-3) {
+		if (!npcs[focus_npc].introduced && playerJuice < npcs[focus_npc].req-3) {
 			return;
-		}
+		} 
 		addChoice("Small talk with "+focus_npc, this, mode.mid);
 	},
 	attempt: function (focus_npc) {
@@ -390,7 +390,7 @@ verbs.push(SmallTalk);
 
 var Flattery = {
 	print: function (focus_npc) {
-		if (!npcs[focus_npc].introduced && playerJuice >= npcs[focus_npc].req-1) {
+		if (!npcs[focus_npc].introduced && playerJuice < npcs[focus_npc].req-1) {
 			return;
 		}
 		addChoice("Flatter " + focus_npc, this, mode.mid);
@@ -721,7 +721,7 @@ splash.start = function () {
   this.container = new PIXI.Container();
   stage.addChild(this.container);
   
-  this.container.addChild(new PIXI.Sprite(new PIXI.Texture.fromImage('imgs/UIbg.png'))); // TODO: KT WILL FIX
+  this.container.addChild(new PIXI.Sprite(new PIXI.Texture.fromImage('imgs/bgSplash.png'))); // TODO: KT WILL FIX
 
   // ------------------------ TEXT ZONE --------------------
   this.textZone = new PIXI.Text('Choose a starting civilization:\n', { // TODO: KT WILL FIX
