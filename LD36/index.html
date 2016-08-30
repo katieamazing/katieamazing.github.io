@@ -335,7 +335,7 @@ verbs.push(IntroduceRepeat);
 
 var SmallTalk = {
 	print: function (focus_npc) {
-		if (!npcs[focus_npc].introduced && playerJuice < npcs[focus_npc].req-3) {
+		if (!npcs[focus_npc].introduced || playerJuice < npcs[focus_npc].req-3) {
 			return;
 		} 
 		addChoice("Small talk with "+focus_npc, this, mode.mid);
@@ -390,7 +390,7 @@ verbs.push(SmallTalk);
 
 var Flattery = {
 	print: function (focus_npc) {
-		if (!npcs[focus_npc].introduced && playerJuice < npcs[focus_npc].req-1) {
+		if (!npcs[focus_npc].introduced || playerJuice < npcs[focus_npc].req-1) {
 			return;
 		}
 		addChoice("Flatter " + focus_npc, this, mode.mid);
@@ -433,7 +433,7 @@ verbs.push(Flattery);
 
 var AskAboutWork = {
 	print: function (focus_npc) {
-		if (!npcs[focus_npc].introduced) {
+		if (!npcs[focus_npc].introduced || playerJuice < npcs[focus_npc].req+1 ) {
 			return;
 		}
 		if (playerJuice >= npcs[focus_npc].req+2 && npcs[focus_npc].juice >= 2) {
@@ -468,9 +468,16 @@ var AskForTech = {
 			addText(npcs[focus_npc].name+': '+npcs[focus_npc].techdesc + '\n');
       collected_techs.push(npcs[focus_npc].tech);
 		} else {
-      var nopetext = generate(grammarBrushOffFriend); 
-      //TODO not working - need to call function inna function??
-		  addText(npcs[focus_npc].name+': '+nopetext + '\n');
+      
+		          var grammarBrushOffFriend = {
+			    desc: ['trade', 'guild\'s', 'family', 'heirloom'],
+			    origin: [
+			      'I\'m sorry, '+playerName+', I can\'t share my #desc# secrets.',
+			      'It\'s not that I don\'t trust you, but you are '+nationality+'. I can\'t tell you about that.'
+			    ]
+			  };
+			  var nopetext = generate(grammarBrushOffFriend); 
+			  addText(npcs[focus_npc].name+': '+nopetext + '\n');
 		}
 	}
 };
@@ -521,7 +528,7 @@ gameplay.start = function () {
 	this.container.addChild(fg);
 
   // ------------------------ TEXT ZONE --------------------
-  this.textZone = new PIXI.Text('When In Rome', {
+  this.textZone = new PIXI.Text('When In Rome\n', {
     wordWrap: true,
     wordWrapWidth: TEXT_WIDTH,
     fontFamily: '"Microsoft Sans Serif", Monaco, monospace',
@@ -592,17 +599,6 @@ gameplay.start = function () {
 	  'Lentullus', 'Forianus', 'Iovinus', 'Vestina', 'Cyprias', 'Celer', 'Vonones', 'Lunaris'],
 	origin: ['#first# #last#']
 	};
-
-  var grammarBrushOffFriend = {
-    //TODO: grammarBrushOff.excuse,
-    desc: ['trade', 'guild\'s', 'family', 'heirloom'],
-    origin: [
-      'I\'m sorry, '+playerName+', I can\'t share my #desc# secrets.',
-      'It\'s not that I don\'t trust you, but you are '+nationality+'. I can\'t tell you about that.'
-      //'I need to #excuse# now, but maybe later?',
-    ]
-  };
-
 
 	var allrooms = [];
 	for (var roomname in rooms){
