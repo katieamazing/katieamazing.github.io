@@ -64,23 +64,25 @@ var choice_verbs = [];
 //--------------------WIN STUFF---------------------------
 //TODO put this in an appropriate place
 var collected_techs = [];
-if (collected_techs.length >= 3) {
-  var techlist = '';
-  for (var i = 0; i < collected_techs.length; i++){
-    techlist += collected_techs[i]+'\n';
-  };
-  addText('Congratulations! You have collected three technologies:\n'+techlist+'.\n Will you:\n');
-  //add choices 'Adopt Rome as your homeland and live in the villa for the rest of your days.'
-  //OR
-  //'Return to '+civ+' and become the savoir of your people.'
-  
-  //Print happily every after:
-  //'You settle in a nearby town, and use your new knowledge of '+collected_techs[1]+' to become an expert in your own right. You are a happy Roman citizen until a volcano kills you and your family.'
-  //'You return to '+civ+' and are hailed as a hero. '+collected_techs[1]+' ends up being critically useful in building '+nationality+' culture to its greatest heights yet.'
-  
-  //add choice 'Credits'
-  //print credits
-};
+function maybe_win(){
+	if (collected_techs.length >= 3) {
+	  var techlist = '';
+	  for (var i = 0; i < collected_techs.length; i++){
+	    techlist += collected_techs[i]+'\n';
+	  };
+	  addText('Congratulations! You have collected three technologies:\n'+techlist+'.\n Will you:\n', mode.textZone);
+	  //add choices 'Adopt Rome as your homeland and live in the villa for the rest of your days.'
+	  //OR
+	  //'Return to '+civ+' and become the savoir of your people.'
+	  
+	  //Print happily every after:
+	  //'You settle in a nearby town, and use your new knowledge of '+collected_techs[1]+' to become an expert in your own right. You are a happy Roman citizen until a volcano kills you and your family.'
+	  //'You return to '+civ+' and are hailed as a hero. '+collected_techs[1]+' ends up being critically useful in building '+nationality+' culture to its greatest heights yet.'
+	  
+	  //add choice 'Credits'
+	  //print credits
+	};
+}
 //--------------------------------------------------------
 
 //--------------- LOSE STUFF------------------------------
