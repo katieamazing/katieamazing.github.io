@@ -88,10 +88,10 @@ if (collected_techs.length >= 3) {
 //--------------------------------------------------------
 
 function Room(t) {
-	this.x = t.x-5;
-	this.y = t.y-15;
-	this.bottom = t.bottom-15;
-	this.right = t.right-5;
+	this.x = t.x;
+	this.y = t.y;
+	this.bottom = t.bottom;
+	this.right = t.right;
 	this.description = t.desc;
 	this.width = this.right - this.x;
 	this.height = this.bottom - this.y;
@@ -164,15 +164,15 @@ rooms['Workshop'] = new Room({
 // what should you do?
 // 1. if room X equals room Y, tween to point P
 // 2. else tween through to(X, Y)
-var OuterPorticoLibraryDoor = { x: 82-5, y: 47-15 };
-var LibraryPeristyleDoor = { x: 75-5, y: 94-15 };
-var PeristyleAudienceRoomDoor = { x: 75-5, y: 160-15 };
-var PeristyleWorkshopDoor = { x: 110-5, y: 115-15 };
-var AudienceRoomSolariumDoor = { x: 112-5, y: 175-15 };
-var SolariumFrontPorticoDoor = { x: 158-5, y: 195-15 };
-var BathsWorkshopDoor = { x: 159-5, y: 94-15 };
-var WorkshopArmoryDoor = { x: 195-5, y: 91-15 };
-var ArmorySalleDoor = { x: 229-5, y: 160-15 };
+var OuterPorticoLibraryDoor = { x: 82, y: 47 };
+var LibraryPeristyleDoor = { x: 75, y: 94 };
+var PeristyleAudienceRoomDoor = { x: 75, y: 160 };
+var PeristyleWorkshopDoor = { x: 110, y: 115 };
+var AudienceRoomSolariumDoor = { x: 112, y: 175 };
+var SolariumFrontPorticoDoor = { x: 158, y: 195 };
+var BathsWorkshopDoor = { x: 159, y: 94 };
+var WorkshopArmoryDoor = { x: 195, y: 91 };
+var ArmorySalleDoor = { x: 229, y: 160 };
 var map = {};
 map['OuterPortico'] = {
 	Default: OuterPorticoLibraryDoor
