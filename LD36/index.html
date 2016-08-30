@@ -19,8 +19,8 @@
 
 var WIDTH = 640; // pixels
 var HEIGHT = 360; // pixels
-var TEXT_WIDTH = 382; // pixels
-var PADDING = 8; // pixels to right and bottom of text
+var TEXT_WIDTH = 378; // pixels
+var PADDING = 16; // pixels to right and bottom of text
 var SCROLL_SPEED = 0.1; // pixels per millisecond
 var PLAYER_SPEED = 0.05; // pixels per millisecond
 var PLAYER_SIZE = 3; // pixels "radius";  
@@ -631,8 +631,8 @@ gameplay.click = function (x, y) {
 				npcSprite = new PIXI.Sprite(new PIXI.Texture.fromImage(maybe_character_clicked.sprite));
 				npcSprite.anchor.x = 0;
 				npcSprite.anchor.y = 1;
-				npcSprite.position.x = 10;
-				npcSprite.position.y = HEIGHT - 10;
+				npcSprite.position.x = 0;
+				npcSprite.position.y = HEIGHT;
 				alphaNPC = 5.0;
 				npcSprite.alpha = Math.min(alphaNPC, 1.0);
 				this.textNPC.alpha = npcSprite.alpha;
