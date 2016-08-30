@@ -112,43 +112,43 @@ rooms['Salle'] = new Room({
   desc: 'You step out into the salle, where soldiers are practicing their combat skills on soft sand.'
 });
 rooms['AudienceRoom'] = new Room({
-	x: 30, y: 159, bottom: 195, right: 112, 
+	x: 30, y: 160, bottom: 195, right: 112, 
   name:'Audience Room',
   desc: 'You walk into a receiving room furnished with lightly padded benches and a large table.'
 });
 rooms['Baths'] = new Room({
-	x: 110, y: 33, bottom: 93, right: 203,
+	x: 112, y: 33, bottom: 94, right: 207,
   name:'Baths',
   desc: 'Steam obscures your vision as you step into the baths. An arcade of columns on the west side of the bathing area closes in the large outdoor pool, but a wide view of the rest of the compound is visible to the north.'
 });
 rooms['FrontPortico'] = new Room({
-	x: 110, y: 200, bottom: 257, right: 203, 
+	x: 112, y: 195, bottom: 257, right: 207, 
   name:'Front Portico',
   desc: 'You walk into a manicured garden with a beautiful fountain at its center.'
 });
 rooms['Library'] = new Room({
-	x: 30, y: 47, bottom: 93, right: 110, 
+	x: 30, y: 47, bottom: 94, right: 112, 
   name:'Library',
   desc: 'Shelves of books and scrolls line the walls of the library. There are large tables for reading and studying, and lots of candles for lighting dusty tomes.'
 });
 rooms['OuterPortico'] = new Room({
-  	x: 20, y: 37, bottom: 46, right: 110, 
+  	x: 20, y: 35, bottom: 47, right: 112, 
   name:'Outer Portico',
   desc: 'You step onto a stone deck. To the north you can see the caesar\'s villa and the rest of the compound.'
 });
 rooms['Peristyle'] = new Room({
-	x: 30, y: 94, bottom: 158, right: 105, 
+	x: 30, y: 94, bottom: 160, right: 105, 
   name:'Peristyle',
   desc: 'You step out into a lushly decorated atrium with a marble impluvium for catching rainwater in the center. The fresh air and sunlight feel wonderful. To the north is the Library, to the east is the workshop, and to the south is the audience room.'
 });
 
 rooms['Solarium'] = new Room({
-	x: 110, y: 159, bottom: 200, right: 203, 
+	x: 112, y: 160, bottom: 207, right: 195, 
   name:'Solarium',
   desc: 'You blink as you enter the bright solarium. There are beautiful hangings on the walls and welcoming places to sit or rest.'
 });
 rooms['Workshop'] = new Room({
-	x: 106, y: 93, bottom: 158, right: 196, 
+	x: 105, y: 94, bottom: 160, right: 195, 
   name:'Workshop',
   desc: 'The scent of wood smoke and scorched flux fills this warm room. A huge fireplace sit against the east wall. There are sturdy desks with a variety of foreign tools on them.'
 });
@@ -164,15 +164,15 @@ rooms['Workshop'] = new Room({
 // what should you do?
 // 1. if room X equals room Y, tween to point P
 // 2. else tween through to(X, Y)
-var OuterPorticoLibraryDoor = { x: 82, y: 36 };
-var LibraryPeristyleDoor = { x: 75, y: 82 };
-var PeristyleAudienceRoomDoor = { x: 75, y: 147 };
-var PeristyleWorkshopDoor = { x: 106, y: 115 };
-var AudienceRoomSolariumDoor = { x: 110, y: 175 };
-var SolariumFrontPorticoDoor = { x: 158, y: 188 };
-var BathsWorkshopDoor = { x: 159, y: 85 };
-var WorkshopArmoryDoor = { x: 196, y: 91 };
-var ArmorySalleDoor = { x: 229, y: 145 };
+var OuterPorticoLibraryDoor = { x: 82-5, y: 47-15 };
+var LibraryPeristyleDoor = { x: 75-5, y: 94-15 };
+var PeristyleAudienceRoomDoor = { x: 75-5, y: 160-15 };
+var PeristyleWorkshopDoor = { x: 110-5, y: 115-15 };
+var AudienceRoomSolariumDoor = { x: 112-5, y: 175-15 };
+var SolariumFrontPorticoDoor = { x: 158-5, y: 195-15 };
+var BathsWorkshopDoor = { x: 159-5, y: 94-15 };
+var WorkshopArmoryDoor = { x: 195-5, y: 91-15 };
+var ArmorySalleDoor = { x: 229-5, y: 160-15 };
 var map = {};
 map['OuterPortico'] = {
 	Default: OuterPorticoLibraryDoor
