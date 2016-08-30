@@ -79,11 +79,12 @@ function maybe_win(){
 		'pixi.js,\n',
 		'user tigersound on freesound.org for the footstep sound effect,\n',
 		'Kate Compton\'s (@galaxykate) amazingly amusing tracery tool,\n',
-		'and Marcelle Duchesne-Guillemin\'s transcription of an ancient audio track to .midi from "A Hurrian Musical Score from Ugarit: The Discovery of Mesopotamian Music," Malibu, CA: Undena publications, 1984.'
+		'and Marcelle Duchesne-Guillemin\'s ancient audio .midi'
 		];
 	  for (i=0; i<credits.length;i++){
 	  	addText(credits[i], mode.textZone);
 	  }
+	  clearChoices(mode.mid);
 	  won = true;
 	};
 }
@@ -1173,6 +1174,9 @@ function clearChoices(container) {
 }
 
 function addChoice(string_to_add, verb, container) {
+	if (won){
+		return;
+	}
 	var text_to_add = new PIXI.Text(string_to_add, {
 		wordWrap: true,
 		wordWrapWidth: TEXT_WIDTH - CHOICES_INDENT,
