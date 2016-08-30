@@ -288,6 +288,7 @@ var Introduce = {
 		addText(npcs[focus_npc].name+': '+introText + '\n', mode.textZone);
 		npcs[focus_npc].introduced = true;
 		npcs[focus_npc].juice += 1;
+		playerJuice += 1;
 	}
 };
 verbs.push(Introduce);
@@ -329,6 +330,7 @@ var IntroduceRepeat = {
 		var text = generate(grammarBrushOff); 
 		addText(npcs[focus_npc].name+': '+text + '\n', mode.textZone);
 		npcs[focus_npc].juice -= 1;
+		playerJuice -= 1;
 	}
 };
 verbs.push(IntroduceRepeat);
@@ -379,8 +381,9 @@ var SmallTalk = {
 	  };
       var text = generate(grammarSmallTalk); 
       //TODO not working - need to call function inna function??
-		  addText(npcs[focus_npc].name+': '+text + '\n', mode.textZone);
-		  npcs[focus_npc].juice += 1;
+		addText(npcs[focus_npc].name+': '+text + '\n', mode.textZone);
+		npcs[focus_npc].juice += 1;
+		playerJuice += 1;
     } else {
       addText(npcs[focus_npc].name+' doesn\'t seem interested in talking to you.\n', mode.textZone);
     }
@@ -424,6 +427,7 @@ var Flattery = {
 		  var text = generate(grammarFlattery); 
 			  addText(npcs[focus_npc].name+': '+text + '\n', mode.mid);
 			  npcs[focus_npc].juice += 1;
+			  playerJuice += 1;
 		} else {
 		  addText(npcs[focus_npc].name+' doesn\'t seem interested in listening to you.\n', mode.mid);
 		}
