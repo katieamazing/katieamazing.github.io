@@ -426,11 +426,11 @@ var Flattery = {
 			    ]
 			  };
 		  var text = generate(grammarFlattery); 
-			addText(npcs[focus_npc].name+': '+text + '\n', mode.mid);
+			addText(npcs[focus_npc].name+': '+text + '\n', mode.textZone);
 			  npcs[focus_npc].juice += 1;
 			  playerJuice += 1;
 		} else {
-		  addText(npcs[focus_npc].name+' doesn\'t seem interested in listening to you.\n', mode.mid);
+		  addText(npcs[focus_npc].name+' doesn\'t seem interested in listening to you.\n', mode.textZone);
 		}
 	}
 };
@@ -448,7 +448,7 @@ var AskAboutWork = {
 	attempt: function (focus_npc) {
 		console.log('you attempt to ask about work');
 		if (playerJuice >= npcs[focus_npc].req+3) {
-			addText(npcs[focus_npc].name+': '+npcs[focus_npc].work + '\n', mode.mid);
+			addText(npcs[focus_npc].name+': '+npcs[focus_npc].work + '\n', mode.textZone);
 		} else {
 			    var grammarBrushOffFriend = {
 			    desc: ['trade', 'guild\'s', 'family', 'heirloom'],
@@ -458,7 +458,7 @@ var AskAboutWork = {
 			    ]
 			  };
 			var text = generate(grammarBrushOffFriend); 
-			addText(npcs[focus_npc].name+': '+text + '\n', mode.mid);
+			addText(npcs[focus_npc].name+': '+text + '\n', mode.textZone);
 			npcs[focus_npc].juice -= 1;
 		}
 	}
@@ -477,7 +477,7 @@ var AskForTech = {
 	attempt: function (focus_npc) {
 		console.log('you attempt to ask for tech');
 		if (playerJuice >= npcs[focus_npc].req*2+2 && npcs[focus_npc].juice >= 4){
-			addText(npcs[focus_npc].name+': '+npcs[focus_npc].techdesc + '\n', mode.mid);
+			addText(npcs[focus_npc].name+': '+npcs[focus_npc].techdesc + '\n', mode.textZone);
       collected_techs.push(npcs[focus_npc].tech);
 		} else {
       
@@ -489,7 +489,7 @@ var AskForTech = {
 			    ]
 			  };
 			  var nopetext = generate(grammarBrushOffFriend); 
-			  addText(npcs[focus_npc].name+': '+nopetext + '\n');
+			  addText(npcs[focus_npc].name+': '+nopetext + '\n', mode.textZone);
 		}
 	}
 };
@@ -820,7 +820,7 @@ GraphicalCharacter.prototype.room = function () {
 GraphicalCharacter.prototype.arriveMessage = function () {
 	if (mode.player.room() == this.room()) {
 		// TODO: comment this out if it gets annoying.
-		addText(this.message, mode.textZone);
+		//addText(this.message, mode.textZone);
 		this.arrive_callback();
 		updateChoices(mode.mid);
 	}
