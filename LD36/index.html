@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Ludum Dare 36: Ancient Technology</title>
+    <title>Ludum Dare 36: When In Rome</title>
 	<style>
 		body {
 			margin: 0;
@@ -521,7 +521,7 @@ gameplay.start = function () {
 	this.container.addChild(fg);
 
   // ------------------------ TEXT ZONE --------------------
-  this.textZone = new PIXI.Text('ANCIENT TECHNOLOGY\n\n', {
+  this.textZone = new PIXI.Text('When In Rome', {
     wordWrap: true,
     wordWrapWidth: TEXT_WIDTH,
     fontFamily: '"Microsoft Sans Serif", Monaco, monospace',
@@ -724,7 +724,7 @@ splash.start = function () {
   this.container.addChild(new PIXI.Sprite(new PIXI.Texture.fromImage('imgs/bgSplash.png'))); // TODO: KT WILL FIX
 
   // ------------------------ TEXT ZONE --------------------
-  this.textZone = new PIXI.Text('Choose a starting civilization:\n', { // TODO: KT WILL FIX
+  this.textZone = new PIXI.Text('Choose your nationality:\n', { // TODO: KT WILL FIX
     wordWrap: true,
     wordWrapWidth: TEXT_WIDTH,
     fontFamily: '"Microsoft Sans Serif", Monaco, monospace',
