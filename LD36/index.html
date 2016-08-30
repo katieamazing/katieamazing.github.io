@@ -65,22 +65,26 @@ var choice_verbs = [];
 //TODO put this in an appropriate place
 var collected_techs = [];
 function maybe_win(){
-	if (collected_techs.length >= 3) {
+	if (collected_techs.length >= 3 && !won) {
 	  var techlist = '';
 	  for (var i = 0; i < collected_techs.length; i++){
 	    techlist += collected_techs[i]+'\n';
 	  };
-	  addText('Congratulations! You have collected three technologies:\n'+techlist+'.\n Will you:\n', mode.textZone);
-	  //add choices 'Adopt Rome as your homeland and live in the villa for the rest of your days.'
-	  //OR
-	  //'Return to '+civ+' and become the savoir of your people.'
-	  
-	  //Print happily every after:
-	  //'You settle in a nearby town, and use your new knowledge of '+collected_techs[1]+' to become an expert in your own right. You are a happy Roman citizen until a volcano kills you and your family.'
-	  //'You return to '+civ+' and are hailed as a hero. '+collected_techs[1]+' ends up being critically useful in building '+nationality+' culture to its greatest heights yet.'
-	  
-	  //add choice 'Credits'
-	  //print credits
+	  addText('\n\nCongratulations! You have collected three technologies:\n'+techlist+'.\n', mode.textZone);
+	  addText('You return to '+civ+' and are hailed as a hero!\n '+collected_techs[1]+' ends up being critically useful in building '+nationality+' culture to its greatest heights yet.\n\n', mode.textZone);
+	  var credits = [
+		'Johnicholas Hines\n@Johnicholas  |  johnicholas.com\n',
+		'Katie Allen\n@ka_amazing  |  katieamazing.com\n\n',
+		'With thanks to:\n',
+		'pixi.js,\n',
+		'user tigersound on freesound.org for the footstep sound effect,\n',
+		'Kate Compton\'s (@galaxykate) amazingly amusing tracery tool,\n',
+		'and Marcelle Duchesne-Guillemin\'s transcription of an ancient audio track to .midi from "A Hurrian Musical Score from Ugarit: The Discovery of Mesopotamian Music," Malibu, CA: Undena publications, 1984.'
+		];
+	  for (i=0; i<credits.length;i++){
+	  	addText(credits[i], mode.textZone);
+	  }
+	  won = true;
 	};
 }
 //--------------------------------------------------------
@@ -1191,16 +1195,6 @@ function updateChoices(container) {
 		}
 	}
 }
-
-var credits = [
-'Johnicholas Hines\n@Johnicholas  |  johnicholas.com\n\n',
-'Katie Allen\n@ka_amazing  |  katieamazing.com\n\n',
-'With thanks to:\n',
-'pixi.js,\n',
-'user tigersound on freesound.org for the footstep sound effect,\n',
-'and Marcelle Duchesne-Guillemin\'s transcription of an ancient audio track to .midi from "A Hurrian Musical Score from Ugarit: The Discovery of Mesopotamian Music," Malibu, CA: Undena publications, 1984.'
-];
-
 </script>
 </html>
 </body>
