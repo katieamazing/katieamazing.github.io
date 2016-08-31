@@ -27,7 +27,6 @@
     <canvas id="canvas"></canvas>
 <script>
 
-
 (function () {
     var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
     window.requestAnimationFrame = requestAnimationFrame;
@@ -164,8 +163,6 @@ function update() {
     }
 
     if (player.y > 360+180 && fallingOff == false){
-      console.log("alpha count and rate are getting reset to 0 and 1")
-      console.log(player.y)
       alphaCount = 0;
       alphaRate = 1;
       fallingOff = true;
@@ -256,29 +253,18 @@ function update() {
     ctx.save();
     ctx.translate(0, -viewport.y+100);
     
-    //draw backdrop
+    //draw background
     for (var i = 0; i < width; i+=2){
       ctx.drawImage(bg, [i], -180);
     }
     ctx.drawImage(bgfixed, 0, -180);
     ctx.translate(-viewport.x+100, 0);
     
-    //draw background
-
     //draw midground
-
     for (var i = 0; i < bgOverlayImg.length; i+=1) {
       var bgOverlayImage = document.getElementById(bgOverlayImg[i]);
       ctx.drawImage(bgOverlayImage, bgOverlayX[i], -180);
     }
-    //draw terrain/platforms
-    //ctx.fillStyle = "black";
-    //ctx.beginPath();
-    //for (var i = 0; i < boxes.length; i++) {
-      //ctx.rect(boxes[i].x, boxes[i].y, boxes[i].width, boxes[i].height);
-    //}
-    //ctx.fill();
-    
     for (var i = 0; i < platforms.length; i++) {
       ctx.drawImage(plat80, platforms[i].id*80, 0, platforms[i].width, platforms[i].height, platforms[i].x, platforms[i].y, platforms[i].width, platforms[i].height);
     }
@@ -372,11 +358,9 @@ function update() {
     if (alpha < 1.0) { //alpha > 0.0 && 
       if (alphaCount <= alphaRate) {
         alphaCount += 1; 
-        console.log("alpha count=" +alphaCount)
       } else {
         alpha += 0.01; 
         alphaCount = 0;
-        console.log("alpha count got set to zero in normal countdown")
       }
       drawOverlay();
     } else if (alpha >= 1.0){
@@ -436,6 +420,7 @@ function sound(src) {
   this.sound.setAttribute("preload", "auto");
   this.sound.setAttribute("controls", "none");
   this.sound.style.display = "none";
+  this.sound.volume = 0.6;
   document.body.appendChild(this.sound);
   this.play = function(){
       this.sound.play();
@@ -508,49 +493,12 @@ function onloadPrizePlacement(){
   prizes.push({x: platforms[rp].x+24, y: platforms[rp].y-40, width: spriteSize, height: spriteSize, sprite: ribbonSprites, state: 0});
 }
 
-function devMode(){
-  if (keys[66]) {
-  // add a box
-    keys[66] = false
-    var randomPlat =  Math.floor(Math.random() * (Math.floor(4) - Math.ceil(0) + 1)) + Math.ceil(0);
-    platforms.push({
-        x: player.x,
-        y: player.y + 10,
-        width: 80,
-        height: 16,
-        id: randomPlat
-    });
-  }
-  if (keys[83]) {
-    var a = "";
-    for (var i= 0; i < platforms.length; i+=1){
-      var b = platforms[i]
-      a = a + ("platforms.push({x:"+b.x+", y:"+b.y+", width:"+b.width+", height:"+b.height+", id:"+b.id+"});\n");
-    }
-  console.log(a);
-  }
-}
-
 document.body.addEventListener("keydown", function (e) {
     keys[e.keyCode] = true;
 });
 
 document.body.addEventListener("keyup", function (e) {
     keys[e.keyCode] = false;
-});
-
-document.body.addEventListener("click", function(event){
-  var randomPlat =  Math.floor(Math.random() * (Math.floor(4) - Math.ceil(0) + 1)) + Math.ceil(0);
-  var rect = canvas.getBoundingClientRect();
-  var locx = event.clientX - rect.left + viewport.x - 100;
-  var locy = event.clientY - rect.top + viewport.y - 100;
-  platforms.push({
-      x: locx,
-      y: locy,
-      width: 80,
-      height: 16,
-      id: randomPlat
-  });
 });
 
 window.addEventListener("load", function () {
