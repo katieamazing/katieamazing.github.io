@@ -1,0 +1,562 @@
+<head>
+    <title>Darcie's Ribbon</title>
+    <link rel="stylesheet" href="dr.css">
+</head>
+<body> 
+    <img src="bg1-2.png" id="bg1" style="display: none"></img>
+    <img src="bg2-1.png" id="bg2" style="display: none"></img>
+    <img src="bg3-2.png" id="bg3" style="display: none"></img>
+    <img src="bg_new.png" id="bg" style="display: none"></img>
+    <img src="bgfixed.png" id="bgfixed" style="display: none"></img>
+    <img src="playerL_fat.png" id="playerSpriteL" style="display: none"></img>
+    <img src="playerR_fat.png" id="playerSpriteR" style="display: none"></img>
+    <img src="playerStatics.png" id="playerStatic" style="display: none"></img>
+    <img src="80p_terrains.png" id="plat80" style="display: none"></img>
+    <img src="boxes.png" id="boxSprite" style="display: none"></img>
+    <img src="fishie.png" id="fishieSprites" style="display: none"></img>
+    <img src="yarn.png" id="yarnSprites" style="display: none"></img>
+    <img src="heart.png" id="heartSprites" style="display: none"></img>
+    <img src="ribbonsprites.png" id="ribbonSprites" style="display: none"></img>
+    <img src="littlehouse_smoke.png" id="houseSprites" style="display: none"></img>
+    <img src="housetrees.png" id="houseBG" style="display: none"></img>
+    <img src="splash1.png" id="splash1" style="display: none"></img>
+    <img src="splash2.png" id="splash2" style="display: none"></img>
+    <img src="win.png" id="winScreen" style="display: none"></img>
+    <img src="lose.png" id="lose" style="display: none"></img>
+    <img src="darkness.png" id="darkness" style="display: none"></img>
+    <canvas id="canvas"></canvas>
+<script>
+
+
+(function () {
+    var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    window.requestAnimationFrame = requestAnimationFrame;
+})();
+const spriteSize = 32;
+const small = 0.01;
+var gameState = 0;
+var houseX = 2000;
+var canvas = document.getElementById("canvas"),
+    ctx = canvas.getContext("2d"),
+    width = 640,
+    height = 360,
+    player = {
+        x: width / 2,
+        y: height - 150,
+        width: 32,
+        height: 32,
+        speed: 3, //was 3
+        velX: 0,
+        velY: 0,
+        grounded: false,
+        sprite: null,
+        animationStartHeart: 0,
+        frameHeart: 0
+    },
+    viewport = {
+      x: player.x-100,
+      y: player.y-100
+    },
+    keys = [],
+    friction = 0.8, //0.8
+    gravity = 0.3;  //0.3
+
+var animationStart = performance.now()
+var animationStart2 = performance.now()
+var frame = 0;
+var frame2 = 0;
+
+var alpha = 0.0;
+var alphaCount = -30;
+var alphaRate = 20;
+var fallingOff = false;
+var wait = 0;
+var won = false;
+var hasRibbon = false;
+var landing = new sound("landing.wav");
+var pickup = new sound("pickup.wav");
+var meow = new sound("meow.wav");
+var purr = new sound("purr.wav");
+var bgOverlayX = [];
+var bgOverlayImagesALL = ["bg1", "bg2", "bg3"];
+var bgOverlayImg = [];
+for (var i = 0; i < 40; i++) {
+  var offset = Math.floor(Math.random() * (Math.floor(200) - Math.ceil(100)) + 100);
+  bgOverlayX.push(((i*200)+offset)-200);
+
+  var overlay = Math.floor(Math.random() * (Math.floor(2) - Math.ceil(0) + 1));
+  bgOverlayImg.push(bgOverlayImagesALL[overlay]);
+}
+var prizes = [];
+var boxes = [];
+var boxSpriteLocs = [];
+var platforms = [];
+onloadPushes();
+onloadPrizePlacement();
+canvas.width = width;
+canvas.height = height;
+function reload(){
+  alpha = 0;
+  alphaRate = 20;
+  alphaCount = -20;
+  fallingOff = false;
+  player.x = width / 2;
+  player.y = height - 150;
+  player.velX = 0;
+  player.velY = 0;
+  
+  prizes = [];
+  boxes = [];
+  boxSpriteLocs = [];
+  platforms = [];
+  onloadPushes();
+  onloadPrizePlacement();
+
+  wait = 0;
+  won = false;
+  hasRibbon = false;
+}
+
+function win(){
+  won = true;
+  meow.play();
+}
+function update() {
+  //ctx.clearRect(0, 0, width, height); -- doesnt seem to be doing anything?
+  if (gameState != 2) {
+    if (gameState == 0){
+      ctx.drawImage(splash1, 0, 0);
+    } else if (gameState == 1){
+      ctx.drawImage(splash2, 0, 0);
+    } else if (gameState == 3){
+      ctx.drawImage(lose, 0, 0);
+    } else if (gameState == 4){
+      ctx.drawImage(winScreen, 0, 0);
+      return;
+    }
+    
+    if (keys[32]) {
+      if (gameState == 0 || gameState == 1){
+        gameState += 1;
+        keys[32] = false;
+      } else if (gameState == 3){
+        reload();
+        gameState = 1;
+        keys[32] = false;
+      }
+    }
+    requestAnimationFrame(update);
+    return;
+  }
+
+  //limit movement to left and right
+
+    if (player.x <= 0) {
+      player.x = 0;
+    } else if (won) {
+      wait += 1;
+      if (wait >= 120){
+        purr.play();
+        gameState = 4;
+      }
+    } else if (player.x >= houseX+32 && player.y <= 116+70 && !won && hasRibbon){
+      win();
+    }
+
+    if (player.y > 360+180 && fallingOff == false){
+      console.log("alpha count and rate are getting reset to 0 and 1")
+      console.log(player.y)
+      alphaCount = 0;
+      alphaRate = 1;
+      fallingOff = true;
+    }
+    player.velX *= friction;
+    player.velY += gravity;
+
+    var frameGrounded = false;
+    //box collisions
+    for (var i = 0; i < boxes.length; i++) {
+      var dir = colCheck(player, boxes[i]);
+      if (dir === "l" || dir === "r") {
+          player.velX = 0;
+      } else if (dir === "b") {
+          frameGrounded = true;
+          player.velY = 0;
+          if (!player.grounded) {
+            landing.play();
+          }
+      } else if (dir === "t") {
+          player.velY *= -1;
+      }
+    }
+    //plat collisions
+    for (var i = 0; i < platforms.length; i++) {
+      var dir = colCheck(player, platforms[i]);
+      if (dir === "l" || dir === "r") {
+          player.velX = 0;
+      } else if (dir === "b") {
+          frameGrounded = true;
+          player.velY = 0;
+          if (!player.grounded) {
+            landing.play();
+          }
+      } else if (dir === "t") {
+          //player.velY *= -1;
+      }
+    }
+    player.grounded = frameGrounded;
+    // check keys
+    if (gameState == 2){
+      if (keys[39] || keys[68]) {
+          // right arrow
+          if (player.velX < player.speed) {
+              player.velX++;
+          }
+      }
+      if (keys[37] || keys[65]) {
+          // left arrow
+          if (player.velX > -player.speed) {
+              player.velX--;
+          }
+      }
+    }
+    if (keys[38] || keys[32] || keys[87]) {
+        // up arrow or space
+        if (gameState == 2 && player.grounded) {
+            player.grounded = false;
+            player.velY = -player.speed * 2;
+        } else if (gameState == 3){
+          gameState = 0;
+        }
+    }
+    
+    player.x += player.velX;
+    player.y += player.velY;
+    
+    if(player.x < viewport.x){
+      viewport.x = player.x;
+    } else if (player.x > viewport.x+200-32){
+      viewport.x = player.x-(200-32);
+    }
+    
+    if(player.y < viewport.y){
+      if (player.y >= -180+(100)){
+        viewport.y = player.y;
+      } else {
+        viewport.y = -180+(100);
+      }
+    } else if (player.y > viewport.y) {
+      if (player.y >= 360+180-264){
+        viewport.y = 360+180-264;
+      } else {
+        viewport.y = player.y;
+      }
+    }
+
+    ctx.save();
+    ctx.translate(0, -viewport.y+100);
+    
+    //draw backdrop
+    for (var i = 0; i < width; i+=2){
+      ctx.drawImage(bg, [i], -180);
+    }
+    ctx.drawImage(bgfixed, 0, -180);
+    ctx.translate(-viewport.x+100, 0);
+    
+    //draw background
+
+    //draw midground
+
+    for (var i = 0; i < bgOverlayImg.length; i+=1) {
+      var bgOverlayImage = document.getElementById(bgOverlayImg[i]);
+      ctx.drawImage(bgOverlayImage, bgOverlayX[i], -180);
+    }
+    //draw terrain/platforms
+    //ctx.fillStyle = "black";
+    //ctx.beginPath();
+    //for (var i = 0; i < boxes.length; i++) {
+      //ctx.rect(boxes[i].x, boxes[i].y, boxes[i].width, boxes[i].height);
+    //}
+    //ctx.fill();
+    
+    for (var i = 0; i < platforms.length; i++) {
+      ctx.drawImage(plat80, platforms[i].id*80, 0, platforms[i].width, platforms[i].height, platforms[i].x, platforms[i].y, platforms[i].width, platforms[i].height);
+    }
+    for (var i = 0; i < boxSpriteLocs.length; i++) {
+      ctx.drawImage(boxSprite,0,0,73,32,boxSpriteLocs[i].x,boxSpriteLocs[i].y,73,32);
+    }
+    //draw prizes, check for collision, draw pickup animation and play sound
+    for (var i = 0; i < prizes.length; i++) {
+      if (prizes[i].state == 0){
+        if (prizes[i].sprite == fishieSprites){
+          drawSprite(prizes[i].sprite, frame2*spriteSize, prizes[i].x, prizes[i].y, spriteSize);
+        } else {
+          drawSprite(prizes[i].sprite, frame*spriteSize, prizes[i].x, prizes[i].y, spriteSize);
+        }
+        if (colCheck(player, prizes[i]) != null){
+          pickup.play();
+          prizes[i].state += 1;
+          player.animationStartHeart = performance.now();
+          if (prizes[i].sprite == ribbonSprites){
+            hasRibbon = true;
+          }
+        }
+      } else if (prizes[i].state == 1){
+        player.frameHeart = Math.floor((performance.now() - player.animationStartHeart)/250)
+        if (player.frameHeart >= 0 && player.frameHeart <= 3) {
+          drawSprite(heartSprites, player.frameHeart*spriteSize, player.x, player.y-16, spriteSize);
+        } else {
+          prizes[i].state += 1;
+        }
+      } else {
+        //don't draw the animation - remove the table entry?
+      }
+    } 
+    ctx.drawImage(houseBG, houseX, -180);
+    drawSprite(houseSprites, frame*128, houseX, 116, 128);
+    
+    //figure out which sprite to draw, draw player
+    var argumentX = null;
+    if (player.grounded == true){
+      if (player.velX > small) {
+        player.sprite = playerSpriteR;
+        argumentX = frame*spriteSize;
+      } else if (player.velX < -small){
+        player.sprite = playerSpriteL;
+        argumentX = frame*spriteSize;
+      } else {
+        player.sprite = playerStatic
+        if (player.velX > 0) {
+          argumentX = 5*spriteSize;
+        } else {
+          argumentX = 4*spriteSize;
+        }
+      }
+    } else if (player.velY < -small) {
+      player.sprite = playerStatic;
+      if (player.velX > small) {
+        argumentX = 3*spriteSize;
+      } else if (player.velX < -small){
+        argumentX = 2*spriteSize;
+      }
+    } else {
+      player.sprite = playerStatic;
+      if (player.velX > small) {
+        argumentX = 1*spriteSize;
+      } else if (player.velX < -small){
+        argumentX = 0*spriteSize;
+      } 
+    }
+    drawSprite(player.sprite, argumentX, player.x, player.y, spriteSize);
+    
+    for (var i = 0; i < boxSpriteLocs.length; i++) {
+      ctx.drawImage(boxSprite,73,0,73,32,boxSpriteLocs[i].x,boxSpriteLocs[i].y,73,32);
+    }
+    
+    var duration = performance.now() - animationStart;
+    duration = duration % 1000;
+    frame = Math.floor(duration / 250);
+    
+    var duration2 = performance.now() - animationStart2;
+    duration2 = duration2 % (100*16);
+    frame2 = Math.floor(duration2 / 100);
+    
+    requestAnimationFrame(update);
+    
+    // debug vis
+    //ctx.rect(viewport.x, viewport.y, 200, 200);
+    //ctx.stroke();
+    ctx.restore();
+    
+
+    if (alpha < 1.0) { //alpha > 0.0 && 
+      if (alphaCount <= alphaRate) {
+        alphaCount += 1; 
+        console.log("alpha count=" +alphaCount)
+      } else {
+        alpha += 0.01; 
+        alphaCount = 0;
+        console.log("alpha count got set to zero in normal countdown")
+      }
+      drawOverlay();
+    } else if (alpha >= 1.0){
+      gameState = 3;
+      drawOverlay();
+    }
+}
+
+function drawSprite(sprite, xloc, x, y, size){
+  ctx.drawImage(sprite, xloc, 0, size, size, x, y, size, size);
+}  
+
+function drawOverlay(){
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  ctx.drawImage(darkness, 0, 0);
+  ctx.restore();
+}
+
+function colCheck(shapeA, shapeB) {
+  // get the vectors to check against
+  var vX = (shapeA.x + (shapeA.width / 2)) - (shapeB.x + (shapeB.width / 2)),
+      vY = (shapeA.y + (shapeA.height / 2)) - (shapeB.y + (shapeB.height / 2)),
+      // add the half widths and half heights of the objects
+      hWidths = (shapeA.width / 2) + (shapeB.width / 2),
+      hHeights = (shapeA.height / 2) + (shapeB.height / 2),
+      colDir = null;
+
+  // if the x and y vector are less than the half width or half height, they we must be inside the object, causing a collision
+  if (Math.abs(vX) <= hWidths && Math.abs(vY) <= hHeights) {
+      // figures out on which side we are colliding (top, bottom, left, or right)
+      var oX = hWidths - Math.abs(vX),
+          oY = hHeights - Math.abs(vY);
+      if (oX >= oY) {
+          if (vY > 0) {
+              colDir = "t";
+              //shapeA.y += oY;
+          } else {
+              colDir = "b";
+              shapeA.y -= oY;
+          }
+      } else {
+          if (vX > 0) {
+              colDir = "l";
+              shapeA.x += oX;
+          } else {
+              colDir = "r";
+              shapeA.x -= oX;
+          }
+      }
+  }
+  return colDir;
+}
+function sound(src) {
+  this.sound = document.createElement("audio");
+  this.sound.src = src;
+  this.sound.setAttribute("preload", "auto");
+  this.sound.setAttribute("controls", "none");
+  this.sound.style.display = "none";
+  document.body.appendChild(this.sound);
+  this.play = function(){
+      this.sound.play();
+  }
+  this.stop = function(){
+      this.sound.pause();
+  }
+}
+
+function onloadPushes(){
+  boxes.push({x:827, y:187, width:80, height:16});
+  boxes.push({x:1671, y:130, width:80, height:16});
+  var bottoms = 0;
+  bottoms = boxes.length;
+  for (var i = 0; i < bottoms; i++) {
+    boxes.push({
+      x: boxes[i].x,
+      y: boxes[i].y - 10,
+      width: 5,
+      height: 20
+    });
+    boxes.push({
+      x: boxes[i].x + 59,
+      y: boxes[i].y -10,
+      width: 1,
+      height: 20
+    });
+    boxSpriteLocs.push({
+      x: boxes[i].x - 5,
+      y: boxes[i].y -20
+    });
+  }
+  boxes.push({
+      x: houseX+5,
+      y: 116+70,
+      width: 80,
+      height: 2
+    });
+  platforms.push({x:310, y: height - 140, width:80, height:16, id:0});
+  platforms.push({x:453, y:248, width:80, height:16, id:4});
+  platforms.push({x:675, y:144, width:80, height:16, id:4});
+  platforms.push({x:602, y:227, width:80, height:16, id:4});
+  platforms.push({x:714, y:300, width:80, height:16, id:2});
+  platforms.push({x:912, y:284, width:80, height:16, id:3});
+  platforms.push({x:1014, y:222, width:80, height:16, id:2});
+  platforms.push({x:1129, y:176, width:80, height:16, id:2});
+  platforms.push({x:1275, y:82, width:80, height:16, id:3});
+  platforms.push({x:1296, y:200, width:80, height:16, id:0});
+  platforms.push({x:1357, y:132, width:80, height:16, id:4});
+  platforms.push({x:1405, y:21, width:80, height:16, id:4});
+  platforms.push({x:1523, y:160, width:80, height:16, id:1});
+  platforms.push({x:1772, y:76, width:80, height:16, id:4});
+  platforms.push({x:1821, y:184, width:80, height:16, id:1});
+  platforms.push({x:1900, y:240, width:80, height:16, id:3});
+  platforms.push({x:810, y:360, width:80, height:16, id:0});
+}
+
+function onloadPrizePlacement(){
+  var randint = Math.floor(Math.random() * (Math.floor(2) - Math.ceil(1) + 1)) + Math.ceil(1);
+  for (var i=0; i < randint*2; i+=1){
+    var randplat = Math.floor(Math.random() * (Math.floor(platforms.length-1) - Math.ceil(2) + 1)) + Math.ceil(2);
+    if (randplat <= 4){
+      var randsprite = yarnSprites;
+    } else {
+      var randsprite = fishieSprites;
+    }
+    prizes.push({x: platforms[randplat].x+24, y: platforms[randplat].y-40, width: spriteSize, height: spriteSize, sprite: randsprite, state: 0});
+  }
+  var rp = Math.floor(Math.random() * (Math.floor(platforms.length-1) - Math.ceil(2) + 1)) + Math.ceil(2);
+  prizes.push({x: platforms[rp].x+24, y: platforms[rp].y-40, width: spriteSize, height: spriteSize, sprite: ribbonSprites, state: 0});
+}
+
+function devMode(){
+  if (keys[66]) {
+  // add a box
+    keys[66] = false
+    var randomPlat =  Math.floor(Math.random() * (Math.floor(4) - Math.ceil(0) + 1)) + Math.ceil(0);
+    platforms.push({
+        x: player.x,
+        y: player.y + 10,
+        width: 80,
+        height: 16,
+        id: randomPlat
+    });
+  }
+  if (keys[83]) {
+    var a = "";
+    for (var i= 0; i < platforms.length; i+=1){
+      var b = platforms[i]
+      a = a + ("platforms.push({x:"+b.x+", y:"+b.y+", width:"+b.width+", height:"+b.height+", id:"+b.id+"});\n");
+    }
+  console.log(a);
+  }
+}
+
+document.body.addEventListener("keydown", function (e) {
+    keys[e.keyCode] = true;
+});
+
+document.body.addEventListener("keyup", function (e) {
+    keys[e.keyCode] = false;
+});
+
+document.body.addEventListener("click", function(event){
+  var randomPlat =  Math.floor(Math.random() * (Math.floor(4) - Math.ceil(0) + 1)) + Math.ceil(0);
+  var rect = canvas.getBoundingClientRect();
+  var locx = event.clientX - rect.left + viewport.x - 100;
+  var locy = event.clientY - rect.top + viewport.y - 100;
+  platforms.push({
+      x: locx,
+      y: locy,
+      width: 80,
+      height: 16,
+      id: randomPlat
+  });
+});
+
+window.addEventListener("load", function () {
+    update();
+});
+
+</script>
+</body>
+</html>
