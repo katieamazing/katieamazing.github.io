@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Darcie's Ribbon: A First Javascript Game
+title: A First Javascript Game
 date: 2016-08-22
 ---
 
