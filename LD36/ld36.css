@@ -1,0 +1,10 @@
+canvas {
+    padding: 100;
+    margin: auto;
+    display: block;
+    width: 640px;
+}
+
+body {
+    background-color: #eee3d7;
+}
