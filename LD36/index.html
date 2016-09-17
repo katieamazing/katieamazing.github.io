@@ -673,9 +673,15 @@ gameplay.click = function (x, y) {
 			focus_npc = null;
 			var roomName = point_to_room(maybe_target);
 			audWalking.play();
-			this.player.walkTo(maybe_target,
-				rooms[roomName].description + '\n',
-				function () { audWalking.stop(); });
+			if (roomName == this.player.room()) {
+				this.player.walkTo(maybe_target,
+				"",
+				function () { audWalking.stop(); });	
+			} else {
+				this.player.walkTo(maybe_target,
+					rooms[roomName].description + '\n',
+					function () { audWalking.stop(); });
+			}
 			this.mid.removeChild(this.youarehere);
 		}
 		updateChoices(this.mid);
