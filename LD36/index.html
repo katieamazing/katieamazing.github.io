@@ -992,7 +992,9 @@ function addText(text_to_add, textZone) {
 function alphaDecay(dt){
   if (alphaNPC > 0.0) {
     alphaNPC -= 0.01;
-    npcSprite.alpha = Math.min(alphaNPC, 1.0);
+    if (npcSprite) {
+    	npcSprite.alpha = Math.min(alphaNPC, 1.0);
+    }
     mode.textNPC.alpha = npcSprite.alpha;
   }
 }
