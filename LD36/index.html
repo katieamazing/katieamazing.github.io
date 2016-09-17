@@ -662,6 +662,7 @@ gameplay.click = function (x, y) {
 				//TODO: and then fade the sprite
 			} else {
 				focus_npc = null;
+				this.mid.removeChild(npcSprite);
 			}
       
 			if (maybe_character_clicked.introduced == true){
