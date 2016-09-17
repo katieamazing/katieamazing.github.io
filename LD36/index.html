@@ -833,7 +833,7 @@ GraphicalCharacter.prototype.room = function () {
 GraphicalCharacter.prototype.arriveMessage = function () {
 	if (mode.player.room() == this.room()) {
 		// TODO: comment this out if it gets annoying.
-		//addText(this.message, mode.textZone);
+		addText(this.message, mode.textZone);
 		this.arrive_callback();
 		updateChoices(mode.mid);
 	}
@@ -886,7 +886,7 @@ GraphicalCharacter.prototype.walkRandom = function (name) {
 	var roomIndex = Math.floor(this.locations.length* Math.random());
 	var roomName = this.locations[roomIndex];
 	var room = rooms[roomName];
-	var message = name + ' arrives in the ' + roomName + '\n';
+	var message = "" //name + ' arrives in the ' + roomName + '\n';
 	if (roomName == this.room()) {
 		// we want them to moving about inside the same room SOME
 		// but we don't want arrive messages.
