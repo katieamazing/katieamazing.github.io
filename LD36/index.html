@@ -670,6 +670,7 @@ gameplay.click = function (x, y) {
 			} else {
 				this.textNPC.text = '\n'+maybe_character_clicked.description;
 			}
+			this.textNPC.alpha = 1.0;
 		} else {
 			focus_npc = null;
 			var roomName = point_to_room(maybe_target);
