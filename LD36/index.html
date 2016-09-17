@@ -583,7 +583,7 @@ gameplay.start = function () {
   this.mid.addChild(this.youarehere);
   
   
-  audMusic.play();
+  //audMusic.play();
 
 	new NPC('Commander Appius Mallus', 12, 0xe42c34, 'imgs/appius.png', ['Armory', 'Salle', 'FrontPortico'], 'A military commander with a strange sense of humor.', 'My work? I oversee the army in this part of the country, and command a company when we are sent into battle. I have to get my siege engines working in time for the next campaign!', 'Of course, if it will help your people as it has helped all of Rome. Here are the plans for the siege engines I have developed.', 'Siege Engines', this.mid);
   
@@ -1138,6 +1138,10 @@ function near_music(p) { //TODO call this somewhere
   //a value between 0 and 1.0 (at 160,168, 1.0)
   var dist_from_source = Math.hypot(160 - p.x, 168 - p.y);
   audMusic.sound.volume = Math.max(0.1, (100 - dist_from_source) / 100); 
+  if (audMusic.duration > 0 && !audMusic.paused ){
+  }else{
+    	audMusic.play();	
+  }
 }
 
 
