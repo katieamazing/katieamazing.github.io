@@ -20,7 +20,7 @@ Next, I restarted my computer in linux mode, and got my locally running neural n
 
 ![generated watercolor texture applied to my sprites](https://raw.githubusercontent.com/katieamazing/katieamazing.github.io/master/games/LD37/web2.jpg)
 
-I was pretty happy with this, but ended up using the [deepart.io](deepart.io) style transfer bot for all other style transfers in this project. The way my computer has a dual boot for linux rather than a virtual machine means that the local neural net was too slow a process, and though the deepart.io version sometimes has a wait, it was easier without having to restart my computer every time I needed Photoshop on my Windows install versus the neural net on my Linux install.
+I was pretty happy with this, but ended up using the [deepart.io](http://deepart.io) style transfer bot for all other style transfers in this project. The way my computer has a dual boot for linux rather than a virtual machine means that the local neural net was too slow a process, and though the deepart.io version sometimes has a wait, it was easier without having to restart my computer every time I needed Photoshop on my Windows install versus the neural net on my Linux install.
 
 To clean up the edges of my newly watercolorified sprites, I used the selection tool on the original spritesheet to get a selection area, and then eliminated stray marks on the watercolor layer. I also set the watercolor version to a medium opacity on top of the old sprites, to take the best of both. So, I got pretty readable shapes, moderately true colors, and the watercolor texture I really wanted but didn't have time to hand paint.
 
