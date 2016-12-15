@@ -28,7 +28,7 @@ To clean up the edges of my newly watercolorified sprites, I used the selection 
 
 I used the same process to generate the background and the text effect sprites (hand drawn, network generated, final version):
 
-![text sprites, original hand drawn, network generated, final](https://raw.githubusercontent.com/katieamazing/katieamazing.github.io/master/games/LD37/text_sprites.png)
+![text sprites, original hand drawn, network generated, final](https://raw.githubusercontent.com/katieamazing/katieamazing.github.io/master/games/LD37/text_sprites.jpg)
 
 And just to show off how everything looks together in the end:
 
