@@ -12,7 +12,7 @@ I started out drawing up some rudimentary sprites. This was a single brush tool 
 
 ![my original sprites, hand drawn](https://raw.githubusercontent.com/katieamazing/katieamazing.github.io/master/games/LD37/my_sprites.png)
 
-Next, I used some stock art that I had to mimic the spritesheet layout above. I wanted to process the whole sheet in one go, sacrificing possible quality and improved style interpretation for speed. So I wanted the style image to match the white space of the content image I had just made. Here's that that looked like:
+Next, I used some stock art that I had to mimic the spritesheet layout above. I wanted to process the whole sheet in one go, sacrificing possible quality and improved style interpretation for speed. So I wanted the style image to match the white space of the content image I had just made. Here's what that looked like:
 
 ![stock art "spritesheet" for style transfer](https://raw.githubusercontent.com/katieamazing/katieamazing.github.io/master/games/LD37/stock_sprites.png)
 
@@ -29,6 +29,8 @@ To clean up the edges of my newly watercolorified sprites, I used the selection 
 I used the same process to generate the background and the text effect sprites (hand drawn, network generated, final version):
 
 ![text sprites, original hand drawn, network generated, final](https://raw.githubusercontent.com/katieamazing/katieamazing.github.io/master/games/LD37/text_sprites.jpg)
+
+I do really love the way this online network handles the watercolor style transfer. I'm hoping to use it again in a project where I can embrace more of the ragged edges and painterly interpretation!
 
 And just to show off how everything looks together in the end:
 
