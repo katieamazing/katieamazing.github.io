@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "LD37 Entry, featuring Neural Net Style Transfer Art"
+title: "Neural Net Style Transfer Game Art"
 date: 2016-12-15
 ---
 
