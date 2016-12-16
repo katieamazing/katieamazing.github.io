@@ -10,7 +10,7 @@ I've been working on a [Shadowrun](https://en.wikipedia.org/wiki/Shadowrun)-insp
 
 As this project grew, I used it as a way to dig into object orientation. This project pushed me to use objects in bigger, better ways. As I worked on this, I was reading The Pragmatic Programmer by Andrew Hunt and David Thomas, and was inspired by the idea of orthogonality to be brave and do a lot of refactoring and generalizing the code in this project. The result is a UI where every window is draggable, droppable, and minimizeable. 
 
-![Gameplay gif] (https://raw.githubusercontent.com/katieamazing/katieamazing.github.io/master/games/Multiplayer-Mini-RL/gameplay.gif)
+![Gameplay gif] (https://raw.githubusercontent.com/katieamazing/katieamazing.github.io/master/games/Multiplayer-Mini-RL/windows.gif)
 
 The networking is functional at this point. I used the same technology I used for the high scores table in the [Fruit Bat game](http://katieamazing.com/blog/2016/07/29/fruit-bat-game) from a few months ago, and it is working. You can chat to other online players in the chat screen, you can see @player avatars moving around, and an inactivity disconnect is working.
 
@@ -20,6 +20,8 @@ The combat system is working, and uses a snap-to-grid functionality for the stat
 
 
 A longer gameplay gif is available [HERE.](https://raw.githubusercontent.com/katieamazing/katieamazing.github.io/master/games/Multiplayer-Mini-RL/gameplay.gif)
+
+
 
 I have two main things remaining on this project, one small and one large.
 
