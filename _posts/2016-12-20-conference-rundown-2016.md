@@ -3,6 +3,7 @@ layout: post
 title: "2016 Conference Rundown"
 date: 2016-12-20
 ---
+
 **May
 !!Con 2016 - Brooklyn, New York**
 
@@ -10,17 +11,18 @@ My first programming conference experience, and definitely my favorite of the ye
 
 I would fight a bear with a spoon for tickets in 2017.
 
+
 **July
 PyGotham 2016 - New York, New York**
 
 This was a much different experience, but I also learned a lot and got very inspired. There were more talks on neural networks (Introduction to Neural Networks with Tensorflow by Mike Craig, Writing Neural Networks from Scratch with apparent real-life hero [Eric Schles](https://twitter.com/EricSchles)) and a talk about procedurally generating music (The Sound of Data, [Gabriel Levine](https://twitter.com/gabehounds)), which was fascinating. It was interesting hearing people talk about tools I've looked at and worked with, like PyGame. I had the most positive social experiences at smaller, more casual meetings. PyGotham hosted some "Birds of a Feather" meetups that were loosely moderated chats, and talking with other newbie coders about how they were self-teaching and their experiences and backgrounds was encouraging. Looking back over the talks schedule to refresh my memory, I can't believe how MUCH there was to listen to! Multitrack conferences seem overwhelming to me, both at the time and in retrospect. There's just so much to absorb, plus the ever-attractive hallway track where all the good social stuff happens. Still, I would absolutely return for next year's, though I might consider heading to PyCon just to change it up!
 
+
 **September
-Animation Nights New York 2016 - New York, New York
+Animation Nights New York 2016 - New York, New York**
 
-**Voiceover Acting in Animation and Games**
+I attended a single panel talk (Voiceover Acting in Animation and Games) through this organization, which I gather is much larger and less of a conference than the other entries here. It's also not a programming conference, and was much more focused on how to become a voice actor. I was hoping for more discussion of how to use voice acting in games, and I did enjoy hearing from indie developer Dave Gilbert of [Wadjet Eye Games](http://www.wadjeteyegames.com/), but as I said, the conversation was more about how it feels to be a voice actor and how to suceed as a voice actor.
 
-I attended a single panel talk through this organization, which I gather is much larger and less of a conference than the other entries here. It's also not a programming conference, and was much more focused on how to become a voice actor. I was hoping for more discussion of how to use voice acting in games, and I did enjoy hearing from indie developer Dave Gilbert of [Wadjet Eye Games](http://www.wadjeteyegames.com/), but as I said, the conversation was more about how it feels to be a voice actor and how to suceed as a voice actor.
 
 **November
 Handmade Con 2016 - Seattle, Washington**
