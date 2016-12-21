@@ -17,7 +17,8 @@ This was a much different experience, but I also learned a lot and got very insp
 
 **September
 Animation Nights New York 2016 - New York, New York
-Voiceover Acting in Animation and Games**
+
+**Voiceover Acting in Animation and Games**
 
 I attended a single panel talk through this organization, which I gather is much larger and less of a conference than the other entries here. It's also not a programming conference, and was much more focused on how to become a voice actor. I was hoping for more discussion of how to use voice acting in games, and I did enjoy hearing from indie developer Dave Gilbert of [Wadjet Eye Games](http://www.wadjeteyegames.com/), but as I said, the conversation was more about how it feels to be a voice actor and how to suceed as a voice actor.
 
@@ -29,5 +30,7 @@ This casual game-development focused con centered around the efforts of Casey Mu
 There were probably three reasons I didn't enjoy this conference much. For one, I'm interested in game development, but only as a means to an end. This conference felt geared to amateur and professional game developers, and a lot of the content either flew over my head or did not feel revelant to my programming learning. Secondly, I was not prepared for the format and did not like it very much. In retrospect, watching some of the videos made during the 2015 conference would have helped orient me to the 90-minute conversational style of the talks, but I'm a visual person and I like slide decks or at least a whiteboard. While they had set up projectors and a drawing app on a touch screen, none of the presentations that I attended made much use of those visual aides. Finally, this was by far the most diversity challenged conference I attended all year. I did not feel unwelcome, but I did constantly notice being one of only a few women, which made me a little uncomfortable. Every speaker was white, and the only female presenter did (the only) non-programming talk. For this reason in particular, I would not consider attending Handmade Con in 2017 unless the speaker list was more diverse.
 
 
+
 **Overall**
+
 I went to some great conferences, and always left them feeling inspired. Some of my best experiences were the organic social ones that happen at these kinds of things if you're really lucky. I think overall that more committment to the social stuff around the talks (before and after networking, fairs, meals, etc.), and maybe more time spent in the "hallway track" of larger multi-track conferences would serve me well in 2017. It's been wonderful attend many excellent talks in 2016 that were so accessible from my new home in New York; that's been a real value-add to my move from Maine. Now on to the next year!
