@@ -59,6 +59,6 @@ Overall, this was a great first project to complete in Lua/LÖVE. My experiences
 
 **Go play it, post your score!**
 
-If you have LÖVE 0.10.1, click [HERE](https://github.com/katieamazing/katieamazing.github.io/blob/master/games/fruitylove/fruity.love?raw=true) to download. 
+If you have LÖVE 0.10.1, click [HERE](https://github.com/katieamazing/katieamazing.github.io/raw/master/games/FruityLove/fruity.love) to download. 
 
-If you don't have LÖVE, click [HERE](https://github.com/katieamazing/katieamazing.github.io/raw/master/games/fruitylove/fruitylove.zip) to download a .zip file with the game.exe inside.
+If you don't have LÖVE, click [HERE](https://github.com/katieamazing/katieamazing.github.io/raw/master/games/FruityLove/fruitylove.zip) to download a .zip file with the game.exe inside.
