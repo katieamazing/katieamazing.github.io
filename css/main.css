@@ -4,8 +4,8 @@
 html { overflow-y: scroll; }
 
 body {
-    margin: 60px auto;
-    width: 60%;
+    /*margin: 60px auto;*/
+    width: 70%;
 }
 nav ul, footer ul {
     font-family: 'Lato', sans-serif;
@@ -71,7 +71,6 @@ ul.posts li {
   opacity: 0;
   
   -webkit-transition: opacity 0.4s;
-
 }
 
 .imgWrap:hover .imgDescription {
@@ -89,8 +88,7 @@ ul.posts li {
 }
 
 /* ---- grid ---- */
-.bigDiv {
-}
+
 .grid {
   background: #ffffff;
   margin: 0 auto;
