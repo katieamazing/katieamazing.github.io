@@ -1,3 +1,8 @@
+* { box-sizing: border-box; }
+
+/* force scrollbar */
+html { overflow-y: scroll; }
+
 body {
     margin: 60px auto;
     width: 60%;
@@ -23,6 +28,11 @@ h1 {
     font-size: 3em;
     font-family: 'Roboto Slab', serif;
 }
+h2 { 
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
 p {
     font-family: 'Lato', sans-serif;
     font-size: 1.2em;
@@ -43,4 +53,64 @@ ul.posts {
 ul.posts li {
     font-family: 'Lato', sans-serif;
     list-style: none;
+}
+.imgWrap {
+  position: relative;
+  height: 200px;
+  width: 200px;
+}
+
+.imgDescription {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  opacity: 0;
+  
+  -webkit-transition: opacity 0.4s;
+
+}
+
+.imgWrap:hover .imgDescription {
+  opacity: 1;
+}
+
+.imgWrap img {
+  opacity: 1;
+  
+  -webkit-transition: opacity 0.4s;
+}
+
+.imgWrap:hover img {
+  opacity: 0.5;
+}
+
+/* ---- grid ---- */
+.bigDiv {
+  margin: auto;
+  width: 60%;
+}
+.grid {
+  background: #ffffff;
+  margin: 0 auto;
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-sizer,
+.grid-item img {
+  display: block;
+  max-width: 100%;
+  width: 200px;
+  float: left;
 }
