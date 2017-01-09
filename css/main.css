@@ -4,8 +4,8 @@
 html { overflow-y: scroll; }
 
 body {
-    /*margin: 60px auto;*/
-    width: 70%;
+    margin: 60px auto;
+    width: 60%;
 }
 nav ul, footer ul {
     font-family: 'Lato', sans-serif;
@@ -46,7 +46,7 @@ footer {
 
 ul.posts { 
     font-family: 'Lato', sans-serif;
-    margin: 20px auto 40px; 
+    margin: 20px auto 80px; 
     font-size: 1.5em;
 }
 
