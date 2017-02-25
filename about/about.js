@@ -9,7 +9,7 @@ $.ajax({
 	success: function(data){
  		console.log(data);
 		for( x in data.data ){
-			$('#instafeed').append('<div class="grid-item"><img src="'+data.data[x].images.low_resolution.url+'"></div>');
+			$('#instafeed').append('<div class="grid-item"><div><img src="'+data.data[x].images.low_resolution.url+'"></div></div>');
 		}
 
     $('.grid').masonry({
