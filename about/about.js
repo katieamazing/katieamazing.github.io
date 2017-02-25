@@ -12,11 +12,6 @@ $.ajax({
 			$('#instafeed').append('<div class="grid-item"><div><img src="'+data.data[x].images.low_resolution.url+'"/></div></div>');
 		}
 
-    $('.grid').masonry({
-      itemSelector: '.grid-item',
-      columnWidth: 200,
-      isFitWidth: true
-    });
 	// init Masonry
 	var $grid = $('.grid').masonry({
 		itemSelector: '.grid-item',
