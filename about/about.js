@@ -17,7 +17,11 @@ $.ajax({
       columnWidth: 200,
       isFitWidth: true
     });
-	},
+        // layout Masonry after each image loads
+        $grid.imagesLoaded().progress( function() {
+        $grid.masonry('layout');
+        });
+        },
 	error: function(data){
 		console.log(data);
 	}
