@@ -12,15 +12,22 @@ $.ajax({
 			$('#instafeed').append('<div class="grid-item"><div><img src="'+data.data[x].images.low_resolution.url+'"/></div></div>');
 		}
 
-    var foo = $('.grid').masonry({
+    $('.grid').masonry({
       itemSelector: '.grid-item',
       columnWidth: 200,
       isFitWidth: true
     });
-        // layout Masonry after each image loads
-        foo.imagesLoaded().progress( function() {
-        foo.masonry('layout');
-        });
+	// init Masonry
+	var $grid = $('.grid').masonry({
+		itemSelector: '.grid-item',
+		columnWidth: 200,
+		isFitWidth: true
+	});
+	// layout Masonry after each image loads
+	$grid.imagesLoaded().progress( function() {
+	  $grid.masonry('layout');
+	});
+		
         },
 	error: function(data){
 		console.log(data);
