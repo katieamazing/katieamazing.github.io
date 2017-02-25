@@ -12,14 +12,14 @@ $.ajax({
 			$('#instafeed').append('<div class="grid-item"><div><img src="'+data.data[x].images.low_resolution.url+'"/></div></div>');
 		}
 
-    $('.grid').masonry({
+    var foo = $('.grid').masonry({
       itemSelector: '.grid-item',
       columnWidth: 200,
       isFitWidth: true
     });
         // layout Masonry after each image loads
-        $grid.imagesLoaded().progress( function() {
-        $grid.masonry('layout');
+        foo.imagesLoaded().progress( function() {
+        foo.masonry('layout');
         });
         },
 	error: function(data){
