@@ -9,7 +9,7 @@ $.ajax({
 	success: function(data){
  		console.log(data);
 		for( x in data.data ){
-			$('#instafeed').append('<div class="grid-item"><div><img src="'+data.data[x].images.low_resolution.url+'"/></div></div>');
+			$('#instafeed').append('<div class="grid-item"><div><a href="https://www.instagram.com/kt_amazing/"><img src="'+data.data[x].images.low_resolution.url+'"/></a></div></div>');
 		}
 
 	// init Masonry
