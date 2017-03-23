@@ -1,0 +1,83 @@
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #002828;
+}
+
+footer {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #DDD;
+  margin: 50px auto 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-Out {
+  opacity: 1;
+  animation: fadeOut 2s cubic-bezier(0.81, 0.12, 1, 0.88) 1 forwards;
+}
+
+.is-paused {
+  animation-play-state: paused;
+}
+
+/* ---- grid ---- */
+
+.grid {
+  background: #DDD;
+  max-width: window.innerWidth;
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-item {
+  float: left;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  /*background-image: url("workroom_bigsq.gif");*/
+  background-size: 100%;
+  background: #002828;
+  border: 2px solid hsla(0, 0%, 0%, 0.5);
+  color: white;
+  font-size: 20px;
+  /*padding: 10px;*/
+}
+
+.grid-item--width2 { width: 200px; }
+.grid-item--height2 { height: 200px; }
+
+.grid-item--width3 { width: 300px; }
+.grid-item--height3 { height: 300px; }
+
+.grid-item:hover {
+  border-color: hsla(0, 0%, 100%, 0.5);
+  cursor: move;
+}
+
+.grid-item.is-dragging,
+.grid-item.is-positioning-post-drag {
+  background: #C90;
+  z-index: 2;
+}
+
+.packery-drop-placeholder {
+  outline: 3px dashed hsla(0, 0%, 0%, 0.5);
+  outline-offset: -6px;
+  -webkit-transition: -webkit-transform 0.2s;
+          transition: transform 0.2s;
+}
