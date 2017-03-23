@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Moon Sugar"
-date: 2016-02-24
+date: 2017-02-24
 ---
 
 Around the beginning of the year, I was working my way through Wes Bos's amusing course, [JavaScript30](https://javascript30.com/). I've enjoyed the use of the browser DOM instead of endless JS library recommendations, and it has been great to solidify my JS skills.
