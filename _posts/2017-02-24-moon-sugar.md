@@ -8,7 +8,7 @@ Around the beginning of the year, I was working my way through Wes Bos's amusing
 
 The course also introduced me to some new syntatic structures and cool new whiz bangs from ES6. I had been learning JS from slightly older material produced by Douglas Crockford, and from a random mishmash of the usual W3Schools/MDN/Stack Overflow answers that googling tends to lead you to, and it was perfect timing to get a good look at some of the ES6 stuff.
 
-At the same time, I started tinkering with my blog page here using some layout libraries produced by [Metafizzy](http://metafizzy.co/). I wanted more visual interest on my main page (sorry [brutalism](http://brutalistwebsites.com/) ilu, but COLOR!), and I also wanted a way to highlights my favorite content from my blog.
+At the same time, I started tinkering with my blog page here using some layout libraries produced by [Metafizzy](http://metafizzy.co/). I wanted more visual interest on my main page (sorry [brutalism](http://brutalistwebsites.com/) ilu, but COLOR!), and I also wanted a way to highlight my favorite content from my blog.
 
 All those new JavaScript-flavored things smushed around in my brain and got me inspired to make another JS game. 
 
