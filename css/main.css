@@ -9,10 +9,10 @@ body {
 }
 
 ul {
-    font-family: 'Lato', sans-serif;
-    font-size: 1.2em;
-    line-height: 1.5em;
-    color: #333;    
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;    
 }
 
 nav ul, footer ul {
