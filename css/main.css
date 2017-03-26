@@ -7,6 +7,14 @@ body {
     margin: 60px auto;
     width: 60%;
 }
+
+ul {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    color: #333;    
+}
+
 nav ul, footer ul {
     font-family: 'Lato', sans-serif;
     padding: 0px;
