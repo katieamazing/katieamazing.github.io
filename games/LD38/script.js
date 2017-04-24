@@ -1,10 +1,10 @@
 //TODO
-// change Target names to soemthing else
-// build and implement list of words
-// add cute fire svg path thinger
-// sound??
-// rewrite text ticker thing to fit better
-// make some kind of balance/progress readout thing UI
+// POSTPONE change Target names to soemthing else
+// OK build and implement list of words
+// OK add cute fire svg path thinger
+// NO sound??
+// 70% rewrite text ticker thing to fit better
+// 70% make some kind of balance/progress readout thing UI
 // win/lose, instructions stuff UI
 
 
@@ -106,7 +106,7 @@ class BlobType {
   }
 
   growLots(){
-    for (var i=0; i< Math.random()*10 + 5; i++){
+    for (var i=0; i< Math.random()*10 + 7; i++){
       this.grow();
     }
   }
@@ -128,25 +128,36 @@ class BlobType {
     }
   }
 
+  dieLots(){
+    for (var i=0; i< Math.random()*10 + 5; i++){
+      this.die();
+    }
+  }
+
 }
 
 function unbalanceBlobs(){
-  if (Math.random() < 0.01){
+  if (performance.now() - animationStart < 30000 ){ return }
+  if (Math.random() < 0.10){
     let max_target = Math.max(water.blobs.length, fire.blobs.length, trees.blobs.length);
-    if (max_target > 300) { return; }
+    //if (max_target > 300) { return; }
     if (water.blobs.length == max_target) {
       water.grow();
+      fire.die();
+      trees.die();
     }
     if (fire.blobs.length == max_target) {
       fire.grow();
+      trees.die();
+      water.die();
     }
     if (trees.blobs.length == max_target) {
       trees.grow();
+      fire.die();
+      water.die();
     }
   }
 }
-
-
 
 // GLOBALS
 let all_blobs = [];
@@ -155,22 +166,31 @@ let water = new BlobType('#waterSprite', 'water');
 let trees = new BlobType('#tree', 'tree');
 let animationStart = null;
 
-function debug(){
-  document.querySelector('#fire').innerHTML = fire.blobs.length;
-  document.querySelector('#water').innerHTML = water.blobs.length;
-  document.querySelector('#trees').innerHTML = trees.blobs.length;
+function winCheck(){
   let current_shannon = Shannonize(fire.blobs.length, water.blobs.length, trees.blobs.length);
   let max_shannon = Shannonize(1, 1, 1);
-  document.querySelector('#winning').innerHTML = 100 * (current_shannon / max_shannon) + '%';
+  let current_percent = Math.round(100 * (current_shannon / max_shannon));
+  document.querySelector('#winning').innerHTML = 'Your world is ' + current_percent + '% balanced.';
+
+  //if (current_percent > 90 and performance.now() - animationStart) > 30000 {
+    //console.warn('winning??');
+  //}
 }
 
 function speechRecog(){
+  const moreFire = ['fire', 'burn', 'burning', 'flames', 'forest fire', 'hot', 'hotter', 'disco', 'lit']
+  const lessFire = ['firefighters', 'firefighter', 'hunky', 'out', 'extinguish', 'hose']
+  const moreWater = ['rain', 'drown', 'lake', 'water', 'waves', 'deluge', 'storm', 'gush', 'waterfall', 'torrent', 'ocean']
+  const lessWater = ['desert', 'dry', 'dried', 'wind', 'parched', 'suck', 'slurp']
+  const moreTrees = ['trees', 'tree', 'grow', 'fertilizer', 'green']
+  const lessTrees = ['die', 'beetle', 'beetles', 'lumberjacks', 'plaid', 'chainsaw']
+
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
   const recognition = new SpeechRecognition();
   recognition.interimResults = true;
 
-  let p = document.createElement('p');
+  let p = document.querySelector('#textticker');
   const words = document.querySelector('.words');
   words.appendChild(p);
 
@@ -184,19 +204,42 @@ function speechRecog(){
 
       if (e.results[0].isFinal) {
         let keywords = transcript.split(' ');
+        console.warn('ACCEPTED ' + keywords);
         for (var i = 0; i < keywords.length; i++){
           let w = keywords[i];
-          if (w == 'fire'){
-            fire.growLots();
-          } else if (w == 'water') {
-            water.growLots();
-          } else if (w == 'trees') {
-            trees.growLots();
+          for (var j = 0; j < moreFire.length; j++){
+            if (w == moreFire[j]){
+              fire.growLots();
+            }
+          }
+          for (var j = 0; j < lessFire.length; j++){
+            if (w == lessFire[j]){
+              fire.dieLots();
+            }
+          }
+          for (var j = 0; j < moreWater.length; j++){
+            if (w == moreWater[j]){
+              water.growLots();
+            }
+          }
+          for (var j = 0; j < lessWater.length; j++){
+            if (w == lessWater[j]){
+              water.dieLots();
+            }
+          }
+          for (var j = 0; j < moreTrees.length; j++){
+            if (w == moreTrees[j]){
+              trees.growLots();
+            }
+          }
+          for (var j = 0; j < lessTrees.length; j++){
+            if (w == lessTrees[j]){
+              trees.dieLots();
+            }
           }
         }
-        debug();
-        p = document.createElement('p');
-        words.appendChild(p);
+        //p = document.createElement('p');
+        words.appendChild(document.querySelector('#textticker'));
       }
   });
 
@@ -209,8 +252,8 @@ function update(t) {
   water.update();
   fire.update();
   trees.update();
-  //unbalanceBlobs();
-  debug();
+  winCheck();
+  unbalanceBlobs();
   requestAnimationFrame(update);
 };
 
