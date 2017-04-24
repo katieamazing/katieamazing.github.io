@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+
+  <meta charset="UTF-8">
+  <title>Speech Detection</title>
+</head>
+<body>
+
+
+  <div id="fire"></div>
+  <div id="water"></div>
+  <div id="trees"></div>
+  <div id="winning"></div>
+  <div class="static_circle">
+    <svg height="600" width="600">
+      <circle cx="300" cy="300" r="200" stroke="black" stroke-width="1" fill="#443e3b" />
+      <defs>
+        <g transform="scale(.5, .5) translate(-118, -260)" id="tree">
+          <path
+             d="m 118.30654,228.20834 v 31.75"
+             style="fill:none;stroke:#583500;stroke-width:7.09463549;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.50196078" />
+          <path
+             d="m 141.55207,229.81399 a 46.49107,89.580353 0 0 1 -46.491063,-1e-5 l 23.245533,-77.57886 z"
+             style="fill:#267e30;fill-opacity:0.50196078;stroke-width:0.26458332" />
+        </g>
+        <g id="waterSprite">
+          <circle r="15" fill="blue" fill-opacity="0.4"/>
+        </g>
+        <g id="fireSprite">
+          <circle r="15" fill="orange" fill-opacity="0.4"/>
+        </g>
+      </defs>
+    </svg>
+  </div>
+  <div class="words" contenteditable>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

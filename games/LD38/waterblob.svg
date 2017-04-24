@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="waterblob.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="174.11399"
+     inkscape:cy="560"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1105"
+     inkscape:window-height="1002"
+     inkscape:window-x="-5"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     showguides="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       style="opacity:1;fill:#800000;fill-opacity:0;stroke:none;stroke-width:8.26499939;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4814"
+       cx="105.45535"
+       cy="151.1012"
+       rx="86.556549"
+       ry="89.202377" />
+    <path
+       sodipodi:type="star"
+       style="opacity:1;fill:#58a5cf;fill-opacity:0;stroke:none;stroke-width:8.26499939;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4820"
+       sodipodi:sides="7"
+       sodipodi:cx="29.482143"
+       sodipodi:cy="57.363094"
+       sodipodi:r1="253.13571"
+       sodipodi:r2="228.06738"
+       sodipodi:arg1="0.83398569"
+       sodipodi:arg2="1.2827846"
+       inkscape:flatsided="true"
+       inkscape:rounded="6.46"
+       inkscape:randomized="4.755"
+       d="M 398.63063,856.70261 C 183.51106,546.6705 2608.4744,744.30548 -97.048448,1313.3388 -2802.5712,1882.3721 2154.4348,2704.6369 395.68816,-99.54154 -1363.0584,-2903.72 -4723.8946,1352.4337 -596.90653,-625.54195 3530.0815,-2603.5176 725.31584,-498.18864 -45.879576,-800.60492 -817.07499,-1103.0212 -477.91618,-718.62319 376.46313,254.96265 1230.8424,1228.5485 -376.99619,-86.745026 -422.5357,-46.35636 -468.07521,-5.9676947 613.7502,1166.7347 398.63063,856.70261 Z"
+       inkscape:transform-center-x="71.526687"
+       inkscape:transform-center-y="722.44315" />
+    <path
+       sodipodi:type="star"
+       style="opacity:1;fill:#58a5cf;fill-opacity:0.60804019;stroke:none;stroke-width:8.26499939;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4828"
+       sodipodi:sides="9"
+       sodipodi:cx="71.815475"
+       sodipodi:cy="124.64285"
+       sodipodi:r1="34.945942"
+       sodipodi:r2="17.472967"
+       sodipodi:arg1="0.67811931"
+       sodipodi:arg2="1.0271852"
+       inkscape:flatsided="true"
+       inkscape:rounded="0.38"
+       inkscape:randomized="-0.092"
+       d="m 102.08751,147.08223 c -5.126538,7.18473 -15.33218,9.27359 -24.744319,10.55229 -9.412138,1.2787 -15.809654,4.3398 -23.690692,0.0736 -7.881038,-4.26616 -13.131055,-10.22947 -16.727492,-18.99535 -3.596436,-8.76589 -0.172631,-16.47379 2.696209,-24.9399 2.86884,-8.46611 4.52043,-11.71643 12.75759,-16.121608 8.23716,-4.405175 14.009098,-9.515726 22.66659,-8.274792 8.657492,1.240934 16.672122,3.598443 22.394753,10.92543 5.722631,7.32698 10.261691,13.91926 10.486991,22.6141 0.2253,8.69484 -0.71309,16.98147 -5.83963,24.16619 z"
+       inkscape:transform-center-x="-68.904025"
+       inkscape:transform-center-y="42.751201"
+       transform="matrix(2.5208625,0,0,2.6066841,-89.184227,-119.80177)" />
+  </g>
+</svg>
