@@ -7,11 +7,18 @@
   <title>Speech Detection</title>
 </head>
 <body>
-
+  <div>
+    <div id="openModal" class="modalDialog modalDialogTarget">
+        <div>	<a href="#close" title="Close" class="close">X</a>
+          <h2 id="modal_heading">Whirled of Words</h2>
+          <p id="modal_para">Use your voice and microphone to control the elements of this tiny world. Go for total domination, or work to keep fire, water, and trees balanced by figuring out which words add or remove them!</p>
+        </div>
+    </div>
+  </div>
   <div id="winning"></div>
   <div class="static_circle">
     <svg height="600" width="600">
-      <circle cx="300" cy="300" r="200" stroke="black" stroke-width="1" fill="#443e3b" />
+      <circle cx="300" cy="300" r="200" fill="#443e3b" />
       <defs>
         <g transform="scale(.5, .5) translate(-118, -260)" id="tree">
           <path
@@ -72,6 +79,8 @@
 
 
       </defs>
+      <g id="world">
+      </g>
     </svg>
   </div>
   <div class="words" contenteditable>
