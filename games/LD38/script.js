@@ -202,11 +202,11 @@ function winCheck(){
 }
 
 function speechRecog(){
-  const moreFire = ['fire', 'red', 'orange', 'yellow', 'burn', 'burning', 'flames', 'forest fire', 'hot', 'hotter', 'disco', 'lit']
+  const moreFire = ['fire', 'inferno', 'red', 'orange', 'yellow', 'burn', 'burning', 'flames', 'forest fire', 'hot', 'hotter', 'disco', 'lit']
   const lessFire = ['firefighters', 'firefighter', 'hunky', 'out', 'extinguish', 'hose']
   const moreWater = ['rain', 'blue', 'drown', 'lake', 'water', 'waves', 'deluge', 'storm', 'gush', 'waterfall', 'torrent', 'ocean']
   const lessWater = ['desert', 'dry', 'dried', 'wind', 'parched', 'suck', 'slurp', 'arid']
-  const moreTrees = ['trees', 'tree', 'green', 'grow', 'fertilizer', 'green']
+  const moreTrees = ['trees', 'tree', 'green', 'shrubbery', 'grow', 'fertilizer', 'green']
   const lessTrees = ['die', 'kill', 'beetle', 'beetles', 'lumberjacks', 'plaid', 'chainsaw', 'cut', 'chop']
 
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
