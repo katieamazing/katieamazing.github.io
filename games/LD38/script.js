@@ -364,7 +364,7 @@ function update(t) {
   document.querySelector('#world').setAttribute('transform', 'translate(300, 300) rotate(' + angle + ') translate(-300, -300)');
   winCheck();
   unbalanceBlobs();
-  if (performance.now() - animationStart < .5 * 60 * 1000) { //originally 1.5 * 60, altered for quick demo 5/22/17
+  if (performance.now() - animationStart < 1.5 * 60 * 1000) { 
     requestAnimationFrame(update);
   } else {
     let current_shannon = Shannonize(fire.blobs.length, water.blobs.length, trees.blobs.length);
