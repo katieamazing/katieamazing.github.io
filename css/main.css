@@ -1,3 +1,6 @@
+
+@import url(monokai.css);
+
 * { box-sizing: border-box; }
 
 /* force scrollbar */
@@ -63,6 +66,7 @@ ul.posts li {
     font-family: 'Lato', sans-serif;
     list-style: none;
 }
+
 .imgWrap {
   position: relative;
   height: 200px;
