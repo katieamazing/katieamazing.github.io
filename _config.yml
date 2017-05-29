@@ -1,6 +1,8 @@
 name: Katie Amazing
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+highlighter: rouge
 gems:
   - jekyll-feed
   - jemoji
+  - rouge
