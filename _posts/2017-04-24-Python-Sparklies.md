@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I Coded in Python for a Year Without Knowing These Ten Things"
-date: TODO
+date: 2017-04-24
 ---
 
 Forgive me for my clickbait title.
