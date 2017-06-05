@@ -8,6 +8,10 @@ Forgive me for my clickbait title.
 
 My first year of learning Python passed a few months ago, and since then I have been learning more and more of the language. I've discovered some startling gaps in my knowledge, and thought I'd write them up. This is the blog post I wish I had read earlier in my Python education, and I hope you find it useful (or maybe just amusing? :flushed:)
 
+<body>
+<hr>
+</body>
+
 **1. ```in```**
 
 Now, I was familiar with ```in``` from for loops, so don't despair of me entirely! But using ```in``` alone as a test for membership had not occurred to me in my first year of Python programming. If we have a collection (like a list, or a string) and we'd like to see if that collection contains (or does not contain) a value, we can use:
@@ -51,7 +55,7 @@ Evaluates to a set like this: {% highlight python %}buttercup_set = {'b', 'u', '
 *Bonus:* Python somewhat obfuscates another set-related data structure, which is more generally referred to as [a bag or a multiset](https://en.wikipedia.org/wiki/Multiset) in Computer Science. Python has these stuffed down in the collections module under the name [Counter](https://docs.python.org/3/library/collections.html#collections.Counter). If you're looking for this data structure, it exists in the language! No need to implement your own bag data structure unless that sounds fun.
 
 
-**3. enumerate()**
+**3. ```enumerate()```**
 
 Oftentimes, we want to loop through a list and have the item and its index available in the body of the loop. We can use [```enumerate(iterable)```](https://docs.python.org/3/library/functions.html#enumerate) to accomplish this:
 
@@ -78,7 +82,7 @@ for number, veggie in veggies.items():
 Note that we still can't guarantee the order in which the dictionary is looped over, but this syntax will give us both sides of each dict entry.
 
 
-**4. .join() instead of +**
+**4. ```.join()``` instead of ```+```**
 
 I had seen [```str.join()```](https://docs.python.org/3/library/stdtypes.html#str.join) in some stack overflow answers, but I didn't realize it was the recommended method for string concatenation until much more recently. I had been using the + operator all this time! ```str.join()``` gives us two opportunities to modify the output: we can specify a spacing, or a character that will be inserted in between each item joined by the operation, and also the items to be joined. We can use join to unite string fragments into one string, or to join string elements of an iterable into one string:
 
@@ -96,7 +100,7 @@ The ```str.join()``` operation is preferable to the + operator for string concat
 The ```str.join()``` operation is quite useful. It has been hard to retrain myself to use it for simple operations where I am tempted to use +, but the upside is that I am more likely to use ```join()``` correctly as I get more familiar with it.
 
 
-**5. for ... else**
+**5. ```for ... else```**
 
 What!? Did you know ```for``` loops can have elses? This blew my mind when I found out. Basically, if we go around all the loops of a ```for``` loop without a ```break``` or ```return``` statement, the code in the else clause is executed. That also means the ```else``` clause runs if the loop is executed zero times. This is useful when using a ```for``` loop to check for some condition — it is useful to prove the value, but it is also useful to get some control flow when the condition was not true for any loop, and therefore false.
 
@@ -111,7 +115,7 @@ else:
 Nice!
 
 
-**6. iter()**
+**6. ```iter()```**
 
 Python is made powerful by iterable objects, and we iterate through strings by character and lists by item all the time. But I didn't know that you could explicitly use the built-in function ```iter()``` to take an iterable object and return an iterator. So what's an iterator, and why would we want to do that?
 
@@ -135,7 +139,7 @@ Another thing ```iter()``` is useful for is custom behavior. We might want to wr
 The ```iter()``` function is pretty simple, but our next two examples depend on it.
 
 
-**7. zip()**
+**7. ```zip()```**
 
 The [```zip()```](https://docs.python.org/3/library/functions.html#zip) function returns an iterator that loops over tuples built from two other iterable objects. Whoah, that's a lot of Python-y buzzwords. Basically, you can construct a new object which combines data from two other objects. For me personally, this has been most understandable and usable when I want to take two lists and make them into a dictionary:
 
@@ -217,7 +221,7 @@ I've shown an accumulator pattern here, because that was the most useful for me.
 *Bonus:* List comprehensions come in two more flavors. You can use the same syntax with sets and dictionaries. Comprehend all the things!
 
 
-**10. repr vs. str**
+**10. ```repr``` vs. ```str```**
 
 ```__repr__``` and ```___str___``` are methods of Python classes. Both are used to represent instances of the class as printed output.
 
@@ -227,5 +231,8 @@ The ```__str__``` method is a somewhat more general representation of the instan
 
 These methods are called automatically when you have a print(object) line in your code. print() looks for the ```__str__``` method first, and if it does not find it, falls back to ```__repr__```. If neither exist, you get that weird memory address output. If you have both, and want ```__repr__```, you can call it directly by using the ```repr()``` function.
 
+<body>
+<hr>
+</body>
 
 Hopefully you found some value in that things it took me a year to learn in Python! If you found it useful or helpful, I'd appreciate a [retweet](link to a twitter post that doesn't exist yet). Thanks to my editors, [@eliasdorneles](https://github.com/eliasdorneles/) and [@DataBranner](https://github.com/DataBranner).
