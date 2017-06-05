@@ -232,7 +232,9 @@ The ```__str__``` method is a somewhat more general representation of the instan
 These methods are called automatically when you have a print(object) line in your code. print() looks for the ```__str__``` method first, and if it does not find it, falls back to ```__repr__```. If neither exist, you get that weird memory address output. If you have both, and want ```__repr__```, you can call it directly by using the ```repr()``` function.
 
 <body>
+<br>
 <hr>
+<br>
 </body>
 
 Hopefully you found some value in that things it took me a year to learn in Python! If you found it useful or helpful, I'd appreciate a [retweet](link to a twitter post that doesn't exist yet). Thanks to my editors, [@eliasdorneles](https://github.com/eliasdorneles/) and [@DataBranner](https://github.com/DataBranner).
