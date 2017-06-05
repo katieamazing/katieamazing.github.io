@@ -151,7 +151,7 @@ print(zip(numbers, cookies))
 
 Now, this will result in the totally useless-looking output
 {% highlight python %}
-\>> <zip object at 0x01FB7609>
+>> <zip object at 0x01FB7609>
 {% endhighlight %}
 or something. That's the iterator object. We'll need to unpack this object into another structure to use it. So:
 
