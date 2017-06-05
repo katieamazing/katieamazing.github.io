@@ -237,4 +237,4 @@ These methods are called automatically when you have a print(object) line in you
 <br>
 </body>
 
-Hopefully you found some value in that things it took me a year to learn in Python! If you found it useful or helpful, I'd appreciate a [retweet](link to a twitter post that doesn't exist yet). Thanks to my editors, [@eliasdorneles](https://github.com/eliasdorneles/) and [@DataBranner](https://github.com/DataBranner).
+Hopefully you found some value in that things it took me a year to learn in Python! If you found it useful or helpful, I'd appreciate a [retweet](https://twitter.com/ka_amazing/status/871819043837272064). Thanks to my editors, [@eliasdorneles](https://github.com/eliasdorneles/) and [@DataBranner](https://github.com/DataBranner).
