@@ -55,6 +55,10 @@ footer {
     font-size: .8em;
 }
 
+img {
+    width: 60%;   
+}
+
 ul.posts { 
     font-family: 'Lato', sans-serif;
     margin: 20px auto 80px; 
