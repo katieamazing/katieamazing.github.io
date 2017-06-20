@@ -218,7 +218,7 @@ def first_hundred(iterator):
         print(next(iterator))
 {% endhighlight %}
 
-This produces a string output for FizzBuzz for the range (0,100]. Other common applications of generators are processing number-theory sequences like the Fibonacci sequence or sequences of squares or Pythagorean triples.
+This produces a string output for FizzBuzz for the range (0,100]. Other common applications of generators are processing number-theory sequences like the Fibonacci sequence, or sequences of squares, or Pythagorean triples.
 
 That's mostly what I have used generators for. They can also be used for more advanced concepts. I encourage you to do more research about generators if you're interested!
 
