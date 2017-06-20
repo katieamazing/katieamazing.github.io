@@ -151,7 +151,7 @@ def bar(iterator):
     return list(iterator)
 
 print(bar(foo("hello world")))
-\>>['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
+>>['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
 {% endhighlight %}
 
 This assigns the string ```"hello world"``` to an iterable, but we don't unpack it until we're inside the bar function, unpacking the iterable into a list. We'll see this again in ```zip()```, but it's a nice way of passing around an iterable chunk of data without having it processed by each function.
@@ -179,7 +179,11 @@ or something. That's the iterator object. We'll need to unpack it into another s
 
 {% highlight python %}
 print(dict(zip(numbers, cookies)))
+>>{1: 'samoa', 2: 'trefoil', 3: 'thin mint', 4: 'tagalong'}
+
 print(list(zip(numbers, cookies)))
+>>[(1, 'samoa'), (2, 'trefoil'), (3, 'thin mint'), (4, 'tagalong')]
+
 {% endhighlight %}
 
 To me, casting the output of the zip iterator to a dict is typically most useful, but I also printed out the example using a list. Casting zipped tuples into a list lets you see that ```zip()``` really is building two-part tuples with each index of your iterable inputs.
