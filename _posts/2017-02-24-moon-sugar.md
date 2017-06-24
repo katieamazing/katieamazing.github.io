@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Moon Sugar"
+title: "Moon Sugar, a Puzzle-Platformer in JS"
 date: 2017-02-24
 ---
 
