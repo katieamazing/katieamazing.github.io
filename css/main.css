@@ -70,6 +70,9 @@ ul.posts li {
     font-family: 'Lato', sans-serif;
     list-style: none;
 }
+ul.posts date {
+    font-family: 'Roboto', sans-serif;
+}
 
 .imgWrap {
   position: relative;
