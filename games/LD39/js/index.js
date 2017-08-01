@@ -132,8 +132,8 @@ class Wine {
 // avoid creating the destination state object until it is actually necessary.
 class Wormhole {
   constructor (x, y, destination_fn) {
-    this.x = canvas.width-430;
-    this.y = canvas.height-324;
+    this.x = canvas.width-360;
+    this.y = canvas.height-290;
     this.width = 385;
     this.height = 180;
     this.color = "green";
