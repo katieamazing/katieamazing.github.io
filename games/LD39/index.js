@@ -1073,12 +1073,14 @@ function transitionToState(destinationState) {
 
 function frame() {
   if (help_mode) {
-    ctx.drawImage(help, 0, 0);
+    ctx.fillStyle="010009";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(help, canvas.width/2-768/2, canvas.height/2-300);
   } else {
     currentState.update()
     currentState.draw();
-    ctx.drawImage(help_icon, canvas.width-20, 0);
   }
+  ctx.drawImage(help_icon, canvas.width-20, 0);
   requestAnimationFrame(frame);
 }
 
