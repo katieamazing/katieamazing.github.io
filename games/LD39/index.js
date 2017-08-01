@@ -68,6 +68,10 @@ class Ingredient {
     ctx.drawImage(this.image, this.x-33, this.y-40);
   }
 
+  drawLittle() {
+    ctx.drawImage(this.image, 0, 0, this.image.width, this.image.height, this.x -10, this.y - 10, this.image.width*0.3, this.image.height*0.3);
+  }
+
   action() {
     if (player.holding == null) {
       player.holding = this;
@@ -90,8 +94,8 @@ class Wine {
   constructor (x, y, width, height, color) {
     this.x = x;
     this.y = y;
-    this.width = width;
-    this.height = height;
+    this.width = 20;
+    this.height = 50;
     this.color = color;
     this.type = 4;
     this.description = 'strong';
@@ -99,10 +103,11 @@ class Wine {
   }
 
   draw() {
-    ctx.beginPath();
-    ctx.rect(this.x, this.y, this.width, this.height);
-    ctx.fillStyle = this.color;
-    ctx.fill();
+    ctx.drawImage(bottle, this.x, this.y);
+  }
+
+  drawLittle() {
+    ctx.drawImage(bottle, 0, 0, bottle.width, bottle.height, this.x+3, this.y-5, bottle.width*0.3, bottle.height*0.3);
   }
 
   action() {
@@ -171,11 +176,11 @@ class WineMaker {
     for (var i = 0; i < this.ingredients.length; i += 1) {
       this.ingredients[i].x = this.x + i * 20 + 5;
       this.ingredients[i].y = this.y + 10;
-      this.ingredients[i].draw();
+      this.ingredients[i].drawLittle();
     }
     if (this.wine !== null) {
       this.wine.x = this.x + 20;
-      this.wine.y = this.y - 10;
+      this.wine.y = this.y - 45;
       this.wine.draw()
     }
   }
@@ -719,7 +724,7 @@ class WineCellar {
     if (found.length == 1) {
       this.stuff[found[0]].action();
     } else if (found.length > 0) {
-      console.log("Which one?", found);
+      this.stuff[found[found.length - 1]].action();
     } else if (player.holding) {
       // only if there is no other thing to do
       player.holding.action();
@@ -962,7 +967,7 @@ class Planet {
     if (found.length == 1) {
       this.stuff[found[0]].action();
     } else if (found.length > 0) {
-      console.log("Which one?", found);
+      this.stuff[found[found.length -1]].action();
     } else if (player.holding) {
       // only if there is no other thing to do
       player.holding.action();
