@@ -68,6 +68,10 @@ class Ingredient {
     ctx.drawImage(this.image, this.x-33, this.y-40);
   }
 
+  drawLittle() {
+    ctx.drawImage(this.image, 0, 0, this.image.width, this.image.height, this.x -10, this.y - 10, this.image.width*0.3, this.image.height*0.3);
+  }
+
   action() {
     if (player.holding == null) {
       player.holding = this;
@@ -90,8 +94,8 @@ class Wine {
   constructor (x, y, width, height, color) {
     this.x = x;
     this.y = y;
-    this.width = width;
-    this.height = height;
+    this.width = 20;
+    this.height = 50;
     this.color = color;
     this.type = 4;
     this.description = 'strong';
@@ -99,10 +103,11 @@ class Wine {
   }
 
   draw() {
-    ctx.beginPath();
-    ctx.rect(this.x, this.y, this.width, this.height);
-    ctx.fillStyle = this.color;
-    ctx.fill();
+    ctx.drawImage(bottle, this.x, this.y);
+  }
+
+  drawLittle() {
+    ctx.drawImage(bottle, 0, 0, bottle.width, bottle.height, this.x+3, this.y-5, bottle.width*0.3, bottle.height*0.3);
   }
 
   action() {
@@ -171,11 +176,11 @@ class WineMaker {
     for (var i = 0; i < this.ingredients.length; i += 1) {
       this.ingredients[i].x = this.x + i * 20 + 5;
       this.ingredients[i].y = this.y + 10;
-      this.ingredients[i].draw();
+      this.ingredients[i].drawLittle();
     }
     if (this.wine !== null) {
       this.wine.x = this.x + 20;
-      this.wine.y = this.y - 10;
+      this.wine.y = this.y - 45;
       this.wine.draw()
     }
   }
@@ -536,7 +541,8 @@ class Shelf {
     this.width = w;
     this.height = h;
     this.i = i;
-    this.data = this.viewWine(i) || [];
+    this.data = [];
+    this.viewWine(i);
   }
 
   viewWine(shelf_number){
@@ -547,10 +553,13 @@ class Shelf {
     fetch("https://ktld39.webscript.io/get_list",
     { method: "POST", body: data })
     .then(function(response) {
+      console.log(response);
       return response.json();
     }).then(function(data) {
-      that.data = data;
-      // TODO: display data[shelf_number] to user
+      console.log(data);
+      if (data) {
+        that.data = data;
+      }
     });
   }
   sendWine(player, wine, shelf_number){
@@ -563,10 +572,14 @@ class Shelf {
     fetch("https://ktld39.webscript.io/add_wine",
     { method: "POST", body: data })
     .then(function(res){
+      console.log(res);
       return res.json();
     })
     .then(function(data){
-      that.data = data;
+      console.log(data);
+      if (data) {
+        that.data = data;
+      }
     })
   }
 
@@ -575,20 +588,24 @@ class Shelf {
 
   action() {
     console.log(this.data);
-    var listnode = document.createElement("ul");
-    for (var i = 0; i < this.data.length; i++) {
-      var itemnode = document.createElement("li");
-      itemnode.appendChild(document.createTextNode("Player: " + this.data[i].player + "  Wine: " + this.data[i].wine));
-      listnode.appendChild(itemnode);
-    }
-    displayInfoText(listnode);
-    if (player.holding != null && player.holding.name) {
+    if (player.holding !== null && player.holding.name) {
+      // sending
       this.sendWine(playerName, player.holding.name, this.i);
       var index = currentState.stuff.indexOf(player.holding);
       if (index > -1) {
         currentState.stuff.splice(index, 1);
       }
       player.holding = null;
+    } else if (player.holding === null && this.data.length > 0) {
+      // viewing
+      this.viewWine(i);
+      var listnode = document.createElement("ul");
+      for (var i = 0; i < this.data.length; i++) {
+        var itemnode = document.createElement("li");
+        itemnode.appendChild(document.createTextNode("Player: " + this.data[i].player + "  Wine: " + this.data[i].wine));
+        listnode.appendChild(itemnode);
+      }
+      displayInfoText(listnode);
     }
   }
 }
@@ -707,7 +724,7 @@ class WineCellar {
     if (found.length == 1) {
       this.stuff[found[0]].action();
     } else if (found.length > 0) {
-      console.log("Which one?", found);
+      this.stuff[found[found.length - 1]].action();
     } else if (player.holding) {
       // only if there is no other thing to do
       player.holding.action();
@@ -950,7 +967,7 @@ class Planet {
     if (found.length == 1) {
       this.stuff[found[0]].action();
     } else if (found.length > 0) {
-      console.log("Which one?", found);
+      this.stuff[found[found.length -1]].action();
     } else if (player.holding) {
       // only if there is no other thing to do
       player.holding.action();
@@ -1056,12 +1073,14 @@ function transitionToState(destinationState) {
 
 function frame() {
   if (help_mode) {
-    ctx.drawImage(help, 0, 0);
+    ctx.fillStyle="010009";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(help, canvas.width/2-768/2, canvas.height/2-300);
   } else {
     currentState.update()
     currentState.draw();
-    ctx.drawImage(help_icon, canvas.width-20, 0);
   }
+  ctx.drawImage(help_icon, canvas.width-20, 0);
   requestAnimationFrame(frame);
 }
 
