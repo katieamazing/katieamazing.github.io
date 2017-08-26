@@ -59,6 +59,10 @@ img {
     max-width: 100%;
 }
 
+figure pre {
+    background-color: #f6f8fa;
+}
+
 ul.posts { 
     font-family: 'Lato', sans-serif;
     margin: 20px auto 80px; 
@@ -69,10 +73,6 @@ ul.posts {
 ul.posts li {
     font-family: 'Lato', sans-serif;
     list-style: none;
-}
-
-.language-python {
-    background-color: #f6f8fa;
 }
 
 .imgWrap {
