@@ -71,6 +71,10 @@ ul.posts li {
     list-style: none;
 }
 
+.language-python {
+    background-color: #f6f8fa;
+}
+
 .imgWrap {
   position: relative;
   height: 200px;
