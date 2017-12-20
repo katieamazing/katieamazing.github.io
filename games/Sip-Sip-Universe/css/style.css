@@ -1,0 +1,14 @@
+
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #002828;
+}
+
+footer {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #DDD;
+  margin: 50px auto 0;
+  font-size: 14px;
+  text-align: center;
+}
