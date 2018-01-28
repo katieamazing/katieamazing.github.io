@@ -18,9 +18,7 @@ class Shelf {
     var data = new FormData();
     data.append( "shelf_number", JSON.stringify( shelf_number ));
 
-    var proxyUrl = "https://cors-anywhere.herokuapp.com/",
-      targetURL = "https://katieamazing.pythonanywhere.com/sendwines"
-    fetch(proxyUrl + targetURL)
+    fetch("https://wt-74f3734c47ba2551d6aa1c792a4e1c45-0.run.webtask.io/sendwines")
     .then(function(response) {
       console.log(response);
       return response.json();
@@ -38,9 +36,7 @@ class Shelf {
     data.append( "wine", wine);
     data.append( "shelf_number", JSON.stringify( shelf_number ) );
 
-    var proxyUrl = "https://cors-anywhere.herokuapp.com/",
-      targetURL = "https://katieamazing.pythonanywhere.com/uploadwine"
-    fetch(proxyUrl + targetURL,
+    fetch("https://wt-74f3734c47ba2551d6aa1c792a4e1c45-0.run.webtask.io/sendwines",
     { method: "POST", body: data })
     .then(function(res){
       console.log(res);
