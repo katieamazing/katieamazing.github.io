@@ -61,7 +61,7 @@ class Shelf {
     console.log(this.data);
     if (player.holding !== null && player.holding.name) {
       // sending
-      this.sendWine(playerName, player.holding.name, this.i, player.holding.description);
+      this.sendWine(player.name, player.holding.name, this.i, player.holding.description);
       var index = currentState.stuff.indexOf(player.holding);
       if (index > -1) {
         currentState.stuff.splice(index, 1);
