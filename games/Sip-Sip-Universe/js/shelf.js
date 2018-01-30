@@ -30,14 +30,18 @@ class Shelf {
       }
     });
   }
-  sendWine(player, wine, shelf_number){
+  sendWine(player, wine, shelf_number, desc){
     var that = this;
     var data = new FormData();
     data.append( "player", player);
     data.append( "wine", wine);
     data.append( "shelf_number", JSON.stringify( shelf_number ) );
 
-    fetch("https://wt-74f3734c47ba2551d6aa1c792a4e1c45-0.run.webtask.io/sendwines",
+    fetch("https://wt-74f3734c47ba2551d6aa1c792a4e1c45-0.run.webtask.io/sendwines" +
+      "player=" + encodeURIComponent(player) +
+      "&wine=" + encodeURIComponent(wine) +
+      "&shelfnum=" + encodeURIComponent(shelf_number) +
+      "&desc=" + encodeURIComponent(desc),
     { method: "POST", body: data, cache: "no-store" })
     .then(function(res){
       console.log(res);
@@ -58,7 +62,7 @@ class Shelf {
     console.log(this.data);
     if (player.holding !== null && player.holding.name) {
       // sending
-      this.sendWine(playerName, player.holding.name, this.i);
+      this.sendWine(playerName, player.holding.name, this.i, player.holding.description);
       var index = currentState.stuff.indexOf(player.holding);
       if (index > -1) {
         currentState.stuff.splice(index, 1);
@@ -80,7 +84,7 @@ class Shelf {
         var row = tnode.insertRow(i+1);
         row.insertCell(0).innerHTML = this.data[i].player;
         row.insertCell(1).innerHTML = this.data[i].wine;
-        row.insertCell(2).innerHTML = "some dummy description"; // this.data[i].description;
+        row.insertCell(2).innerHTML = this.data[i].description;
       }
       displayInfoText(tnode);
     }
