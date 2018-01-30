@@ -69,7 +69,7 @@ class Shelf {
       player.holding = null;
     } else if (player.holding === null && this.data.length > 0) {
       // viewing
-      this.viewWine(i);
+      this.viewWine(this.i);
       var tnode = document.createElement("table");
       var header = tnode.createTHead();
       var header_row = header.insertRow();
