@@ -37,7 +37,7 @@ class Shelf {
       "&wine=" + encodeURIComponent(wine) +
       "&shelfnum=" + encodeURIComponent(shelf_number) +
       "&desc=" + encodeURIComponent(desc),
-    { method: "POST", body: data, cache: "no-store" })
+    { method: "POST", cache: "no-store" })
     .then(function(res){
       console.log(res);
       return res.json();
