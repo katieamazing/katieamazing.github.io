@@ -17,14 +17,12 @@ class Player {
     this.hp = 3;
     this.name = playerName;
     this.frame = 0;
-    console.log("made a player object")
   }
   transitionToState(destination) {
     // TODO
   }
 
   draw() {
-    console.log("hitting player draw call")
     var argx = 0;
     const SMALL = 0.01;
     if (this.velX > SMALL) { //facing right, walking

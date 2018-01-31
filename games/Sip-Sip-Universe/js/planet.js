@@ -224,7 +224,6 @@ class Planet {
       return
     } else if (collision_type != "flat") {
       // player's in a rock, let's scoot the player =P
-      console.log("player's in a rock, let's scoot the player =P");
       let xs = [
         Math.floor(player.x / T) * T, player.x, Math.ceil(player.x / T) * T,
         Math.floor((player.x + player.width) / T) * T - player.width, Math.ceil((player.x + player.width) / T) * T - player.width

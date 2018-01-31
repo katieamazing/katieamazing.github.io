@@ -102,7 +102,6 @@ class WineCellar {
     for (var i = 0; i < this.native_hyperspace_stuff.length; i++) {
       if (colCheck(player, this.native_hyperspace_stuff[i])) {
         this.native_hyperspace_stuff[i].action();
-        console.log("colliding with native hyperspace stuff");
         return;
       }
     }
