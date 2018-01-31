@@ -27,8 +27,8 @@ I did have a weird sense of being less of the Python tribe than many who attende
 It was a lot of socializing, which I found exhausting but also really enjoyable and valuable. The Python community is intensely supportive, kind, outgoing, etc. I also got to meet a number of Recursers who had traveled to Portland. I wish I could have stayed for the sprints during the week following the conference, as contributing in that setting to the BeeWare project would have been valuable, but Recurse was back in session on Monday. Maybe next year!
 
 
-**September
-**Owning Your Experience by Write/Speak/Code - New York, New York**
+**September 
+Owning Your Experience by Write/Speak/Code - New York, New York**
 
 This one-day intensive for women and nonbinary people was part-workshop, part extended talk. The material focused on owning power, leveraging experience, and ways to demonstrate and amplify those to the world. I ran into a lot of great women I already knew, and met many new people. It was nice to talk with women from all over the tech world, in varying specialities, and with different experience levels. I was a little disappointed that the impressive mentors for the day didn't have much stage time to talk about themselves and their experiences, and that we didn't do as much coding as I imagined we might do.  
 
