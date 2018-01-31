@@ -38,18 +38,10 @@ class Shelf {
       "&shelfnum=" + encodeURIComponent(shelf_number) +
       "&desc=" + encodeURIComponent(desc),
     { method: "POST", cache: "no-store" })
-    .then(function(res){
-      console.log(res);
-      return res.json();
-    })
-    .then(function(data){
-      console.log(data);
-      if (data) {
-        that.data = data;
-      }
-    })
 
+    console.log("this.data is: " + this.data);
     this.data.push({player: player, wine: wine, description: desc});
+    console.log("this.data after pushing is: " + this.data);
   }
 
   draw() {
