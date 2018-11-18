@@ -1,4 +1,4 @@
-var token = '3289111688.7e19c20.3cbe4dbdeb184875b2bf172d599b6b2b',
+var token = '3289111688.7e19c20.1acfeccdcb574e06883cc2ede0b33dac',
     num_photos = 10;
  
 $.ajax({
